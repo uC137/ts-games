@@ -1,9 +1,3 @@
-/**
- * @author       Digitsensitive <digit.sensitivee@gmail.com>
- * @copyright    2018 Digitsensitive
- * @license      Digitsensitive
- */
-
 import "phaser";
 import { MainScene } from "./scenes/mainScene";
 
