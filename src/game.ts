@@ -1,19 +1,26 @@
 import "phaser";
-import { MainScene } from "./scenes/mainScene";
+import {BootScene } from "./scenes/bootScene";
+import {MainMenuScene} from "./scenes/mainMenuScene";
+import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
 const config: GameConfig = {
-  width: 800,
-  height: 600,
+  title: "Snake",
+  version: "1.1",
+  width: 256,
+  height: 224,
+  zoom: 3,
   type: Phaser.AUTO,
   parent: "game",
-  scene: MainScene,
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 200 }
-    }
-  }
+  scene: [BootScene, MainMenuScene,GameScene],
+  input: {
+    keyboard: true,
+    mouse: false,
+    touch: false,
+    gamepad: false
+  },
+  backgroundColor: "#000000",
+  render: { pixelArt: true, antialias: false }
 };
 
 // game class
