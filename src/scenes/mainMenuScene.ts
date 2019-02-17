@@ -5,7 +5,7 @@ export class MainMenuScene extends Phaser.Scene {
     private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
 
     constructor() {
-        super({key:"MainMenuScene"});
+        super({key: "MainMenuScene"});
 
     }
 
@@ -29,7 +29,7 @@ export class MainMenuScene extends Phaser.Scene {
         );
     }
 
-    create(): void{
+    create(): void {
         this.bitmapTexts.push(
             this.add.bitmapText(
                 this.sys.canvas.width / 2 - 46,
