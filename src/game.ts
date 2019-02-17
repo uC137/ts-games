@@ -7,7 +7,7 @@ import {GameScene} from "./scenes/gameScene";
 const config: GameConfig = {
     title: "Snake",
     version: "1.1",
-    width: 256,
+    width: 400,
     height: 224,
     zoom: 3,
     type: Phaser.AUTO,
