@@ -21,6 +21,10 @@ npm run dev
 ```
 > If you use yarn just replace `npm` with `yarn`
 
+## Screen Shot
+![](ScreenShot.png)
+
+
 ## TypeScript Configuration
 
 ### tsconfig.json
