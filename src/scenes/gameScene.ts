@@ -127,20 +127,20 @@ export class GameScene extends Phaser.Scene {
 
         // border vs. snake collision
         for (let {x, y} of this.gameBorder) {
-            if (headX === x && headY === y){
+            if (headX === x && headY === y) {
                 //this.player.setDead(true);
                 // or
                 // infinite walls
-                if (x + 3 * this.fieldSize > this.gameWidth){
+                if (x + 3 * this.fieldSize > this.gameWidth) {
                     this.player.getHead().x = -this.fieldSize;
                 } else if (x <= -this.fieldSize) {
-                    this.player.getHead().x = this.gameWidth - (x + 3*this.fieldSize);
+                    this.player.getHead().x = this.gameWidth - (x + 3 * this.fieldSize);
                 }
 
                 if (y + 3 * this.fieldSize > this.gameHeight) {
                     this.player.getHead().y = -this.fieldSize;
                 } else if (y <= -this.fieldSize) {
-                    this.player.getHead().y = this.gameHeight - (y + 3*this.fieldSize);
+                    this.player.getHead().y = this.gameHeight - (y + 3 * this.fieldSize);
                 }
 
 
