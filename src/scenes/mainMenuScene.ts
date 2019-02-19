@@ -35,7 +35,7 @@ export class MainMenuScene extends Phaser.Scene {
                 this.sys.canvas.width / 2 - 46,
                 this.sys.canvas.height / 2 - 10,
                 "snakeFont",
-                "Enter: PLAY",
+                "PRESS ENTER",
                 8
             )
         );
@@ -45,7 +45,7 @@ export class MainMenuScene extends Phaser.Scene {
                 this.sys.canvas.width / 2 - 70,
                 this.sys.canvas.height / 2 - 60,
                 "snakeFont",
-                "S N A K E",
+                "TS GAMES",
                 16
             )
         );

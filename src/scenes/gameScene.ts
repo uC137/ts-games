@@ -12,6 +12,7 @@ export class GameScene extends Phaser.Scene {
     private horizontalFields: number;
     private verticalFields: number;
     private tick: number;
+    private levelValue: number;
 
     // objects
     private player: Snake;
@@ -27,6 +28,7 @@ export class GameScene extends Phaser.Scene {
 
     init(): void {
         this.fieldSize = 8;
+        this.levelValue = 100;
         this.gameHeight = this.sys.canvas.height;
         this.gameWidth = this.sys.canvas.width;
         this.boardWidth = this.gameWidth - 2 * this.fieldSize;
@@ -74,7 +76,7 @@ export class GameScene extends Phaser.Scene {
 
         if (!this.player.isDead()) {
             this.scoreText.setText('' + CONST.SCORE);
-            if (time - this.tick > this.level()) {
+            if (time - this.tick > this.levelValue - 4*CONST.SCORE) {
                 this.player.move();
                 this.checkCollision();
                 this.tick = time;
@@ -85,30 +87,6 @@ export class GameScene extends Phaser.Scene {
             this.scene.start("MainMenuScene");
         }
 
-    }
-
-    private level(): number {
-        let tickValue = 100;
-        switch (true) {
-            case CONST.SCORE >= 5:
-                return tickValue - 20;
-            case CONST.SCORE >= 10:
-                return tickValue - 45;
-            case CONST.SCORE >= 20:
-                return tickValue - 55;
-            case CONST.SCORE >= 30:
-                return tickValue - 65;
-            case CONST.SCORE >= 40:
-                return tickValue - 75;
-            case CONST.SCORE >= 50:
-                return tickValue - 85;
-            case CONST.SCORE >= 60:
-                return tickValue - 95;
-            case CONST.SCORE >= 70:
-                return tickValue - 100;
-            default:
-                return tickValue;
-        }
     }
 
     private rndXPos(): number {
