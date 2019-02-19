@@ -93,17 +93,17 @@ export class GameScene extends Phaser.Scene {
             case CONST.SCORE >= 5:
                 return tickValue - 20;
             case CONST.SCORE >= 10:
-                return tickValue - 35;
-            case CONST.SCORE >= 20:
                 return tickValue - 45;
-            case CONST.SCORE >= 30:
+            case CONST.SCORE >= 20:
                 return tickValue - 55;
-            case CONST.SCORE >= 40:
+            case CONST.SCORE >= 30:
                 return tickValue - 65;
+            case CONST.SCORE >= 40:
+                return tickValue - 75;
             case CONST.SCORE >= 50:
                 return tickValue - 85;
             case CONST.SCORE >= 60:
-                return tickValue - 90;
+                return tickValue - 95;
             case CONST.SCORE >= 70:
                 return tickValue - 100;
             default:
