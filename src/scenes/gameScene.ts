@@ -76,7 +76,7 @@ export class GameScene extends Phaser.Scene {
 
         if (!this.player.isDead()) {
             this.scoreText.setText('' + CONST.SCORE);
-            if (time - this.tick > this.levelValue - 4*CONST.SCORE) {
+            if (time - this.tick > this.levelValue - 3 * CONST.SCORE) {
                 this.player.move();
                 this.checkCollision();
                 this.tick = time;
