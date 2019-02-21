@@ -1,5 +1,3 @@
-import {CONST} from "../objects/const";
-
 export class MainMenuScene extends Phaser.Scene {
     private startKey: Phaser.Input.Keyboard.Key;
     private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
@@ -15,59 +13,32 @@ export class MainMenuScene extends Phaser.Scene {
             Phaser.Input.Keyboard.KeyCodes.ENTER
         );
 
-        if (CONST.SCORE > CONST.HIGHSCORE) {
-            CONST.HIGHSCORE = CONST.SCORE;
-        }
-        CONST.SCORE = 0;
-    }
+        this.startKey.isDown = false;
 
-    preload(): void {
-        this.load.bitmapFont(
-            "snakeFont",
-            "./src/assets/snakeFont.png",
-            "./src/assets/snakeFont.fnt"
-        );
     }
 
     create(): void {
+        this.add.image(0, 0, "title").setOrigin(0, 0);
+
         this.bitmapTexts.push(
             this.add.bitmapText(
-                this.sys.canvas.width / 2 - 46,
-                this.sys.canvas.height / 2 - 10,
-                "snakeFont",
-                "PRESS ENTER",
+                this.sys.canvas.width / 2 - 22,
+                105,
+                "font",
+                "START",
                 8
             )
         );
-
-        this.bitmapTexts.push(
-            this.add.bitmapText(
-                this.sys.canvas.width / 2 - 70,
-                this.sys.canvas.height / 2 - 60,
-                "snakeFont",
-                "TS GAMES",
-                16
-            )
-        );
-
-        this.bitmapTexts.push(
-            this.add.bitmapText(
-                this.sys.canvas.width / 2 - 45,
-                this.sys.canvas.height / 2 + 30,
-                "snakeFont",
-                "HIGHSCORE: " + CONST.HIGHSCORE,
-                8
-            )
-        );
-
-
     }
 
 
     update(): void {
         if (this.startKey.isDown) {
-            this.scene.start("GameScene");
+            // Load scene
+           //this.scene.start("GameScene");
         }
+
+
     }
 
 }

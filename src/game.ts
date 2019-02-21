@@ -5,11 +5,11 @@ import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
 const config: GameConfig = {
-    title: "Snake",
-    version: "1.1",
-    width: 400,
-    height: 224,
-    zoom: 3,
+    title: "Mario",
+    version: "1.0",
+    width: 160,
+    height: 144,
+    zoom: 5,
     type: Phaser.AUTO,
     parent: "game",
     scene: [BootScene, MainMenuScene, GameScene],
@@ -19,7 +19,13 @@ const config: GameConfig = {
         touch: false,
         gamepad: false
     },
-    backgroundColor: "#000000",
+    physics : {
+        default: "arcade",
+        arcade: {
+            gravity: { y: 475 },
+            debug: false
+        }
+    },
     render: {pixelArt: true, antialias: false}
 };
 
