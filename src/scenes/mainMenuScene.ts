@@ -14,7 +14,7 @@ export class MainMenuScene extends Phaser.Scene {
         );
 
         this.startKey.isDown = false;
-
+        this.initGlobalDataManager();
     }
 
     create(): void {
@@ -35,10 +35,22 @@ export class MainMenuScene extends Phaser.Scene {
     update(): void {
         if (this.startKey.isDown) {
             // Load scene
-           //this.scene.start("GameScene");
+           this.scene.start("GameScene");
         }
 
 
+    }
+
+    private initGlobalDataManager(): void {
+        this.registry.set("time", 400);
+        this.registry.set("level", "level1");
+        this.registry.set("world", "1-1");
+        this.registry.set("worldTime", "WORLD TIME");
+        this.registry.set("score", 0);
+        this.registry.set("coins", 0);
+        this.registry.set("lives", 3);
+        this.registry.set("spawn", { x: 12, y: 44, dir: "down" });
+        this.registry.set("marioSize", "small");
     }
 
 }
