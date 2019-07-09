@@ -1,6 +1,5 @@
 import "phaser";
 import {BootScene} from "./scenes/bootScene";
-import {MainMenuScene} from "./scenes/mainMenuScene";
 import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
@@ -10,23 +9,16 @@ const config: GameConfig = {
     width: 550,
     height: 550,
     // zoom: 2,
-    type: Phaser.CANVAS,
+    type: Phaser.AUTO,
     backgroundColor: 0x880044,
     parent: "game",
-    scene: [BootScene, MainMenuScene, GameScene],
+    scene: [BootScene,GameScene],
     input: {
         keyboard: false,
         mouse: true,
         touch: false,
         gamepad: false
     },
-    // physics : {
-    //     default: "arcade",
-    //     arcade: {
-    //         gravity: { y: 475 },
-    //         debug: false
-    //     }
-    // },
     render: {pixelArt: true, antialias: false}
 };
 
