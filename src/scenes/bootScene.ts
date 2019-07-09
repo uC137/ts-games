@@ -5,21 +5,12 @@ export class BootScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.cameras.main.setBackgroundColor(0x000000);
-
-
-        // load our package
-        this.load.pack(
-            "preload",
-            "./src/assets/pack.json",
-            "preload"
-        );
-
-
+        this.load.image('wheel','wheel.png');
+        this.load.image('pin','pin.png');
     }
 
 
     update(): void {
-        this.scene.start("MainMenuScene");
+        this.scene.start("GameScene");
     }
 }

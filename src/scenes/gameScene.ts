@@ -1,7 +1,7 @@
+import {Wheel} from "../objects/wheel";
+
 export class GameScene extends Phaser.Scene {
-    private map: Phaser.Tilemaps.Tilemap;
-    private tileset: Phaser.Tilemaps.Tileset;
-    // field and game setting
+    private wheel: Wheel;
 
     constructor() {
         super({key: "GameScene"});
@@ -11,9 +11,20 @@ export class GameScene extends Phaser.Scene {
     }
 
     create(): void {
-        // create our tilemap from Tiled JSON
-        this.map = this.make.tilemap({ key: this.registry.get("level") });
-        this.tileset = this.map.addTilesetImage("tiles");
+        this.wheel = new Wheel(this);
+        // adding the wheel in the middle of the canvas
+        this.add.sprite(this.sys.canvas.width / 2, this.sys.canvas.height / 2, "wheel");
+        this.add.sprite(this.sys.canvas.width / 2, this.sys.canvas.height / 2, "pin");
+        // adding the text field
+        this.add.text(this.sys.canvas.width / 3, this.sys.canvas.height - 40, "Spin the wheel", {
+            font: "bold 32px Arial",
+            align: "center",
+            color: "white"
+        });
+
+        this.wheel.canSpin = false;
+        this.input.on('pointerdown', this.wheel.spinWheel , this);
+
     }
 
 
