@@ -1,15 +1,20 @@
 import {GameScene} from "../scenes/gameScene";
 
 export class Wheel {
+    private scene: any;
     public canSpin: boolean;
     public slices = 8;
     public rotationTime = 3000;
     public slicePrizes = ["A KEY!!!", "50 STARS", "500 STARS", "BAD LUCK!!!", "200 STARS", "100 STARS", "150 STARS", "BAD LUCK!!!"];
     public prizeText: Phaser.GameObjects.Text;
-    private scene: any;
 
     constructor(scene: GameScene) {
         this.scene = scene;
+        this.prizeText = this.scene.add.text(this.scene.sys.canvas.width / 3, this.scene.sys.canvas.height - 35, "Spin the wheel", {
+            font: "bold 32px Arial",
+            align: "center",
+            color: "black"
+        });
     }
 
 

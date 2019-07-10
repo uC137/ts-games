@@ -15,11 +15,6 @@ export class GameScene extends Phaser.Scene {
         // adding the wheel in the middle of the canvas
         this.wheelImg = this.add.sprite(this.sys.canvas.width / 2, this.sys.canvas.height / 2, "wheel");
         this.add.sprite(this.sys.canvas.width / 2, this.sys.canvas.height / 2, "pin");
-        this.wheel.prizeText = this.add.text(this.sys.canvas.width / 3, this.sys.canvas.height - 35, "Spin the wheel", {
-            font: "bold 32px Arial",
-            align: "center",
-            color: "black"
-        });
         this.input.on('pointerdown', () => this.wheel.spin(this.wheelImg), this);
     }
 
