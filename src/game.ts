@@ -10,9 +10,9 @@ const config: GameConfig = {
     height: 550,
     // zoom: 2,
     type: Phaser.AUTO,
-    backgroundColor: 0x880044,
+    backgroundColor: 0xffffff,
     parent: "game",
-    scene: [BootScene,GameScene],
+    scene: [BootScene, GameScene],
     input: {
         keyboard: false,
         mouse: true,

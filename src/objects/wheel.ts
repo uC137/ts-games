@@ -13,9 +13,7 @@ export class Wheel {
     }
 
 
-    spinWheel() {
-        console.log('canSpin ', this.canSpin);
-
+    spin(img) {
         // can we spin the wheel?
         if (this.canSpin) {
 
@@ -41,7 +39,7 @@ export class Wheel {
             this.scene.tweens.add({
 
                 // adding the wheel to tween targets
-                targets: [this],
+                targets: [img],
 
                 // angle destination
                 angle: 360 * rounds + degrees,
