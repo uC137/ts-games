@@ -5,12 +5,12 @@ export class Wheel {
     public canSpin: boolean;
     public slices = 8;
     public rotationTime = 3000;
-    public slicePrizes = ["ბუბლი ჯუჯა!!!", "50 ნადუღი", "500 STARS", "ტყორინი", "200 ბუბლიდონა", "100 ნადუღი", "150 STARS", "ტყორინი"];
+    public slicePrizes = ["ბუბლი ჯუჯა!!!", "50 ნადუღი", "500 მჰ", "ტყორინი", "200 ბუბლიდონა", "100 ნადუღი", "150 მჰ", "ტყორინი"];
     public prizeText: Phaser.GameObjects.Text;
 
     constructor(scene: GameScene) {
         this.scene = scene;
-        this.prizeText = this.scene.add.text(this.scene.sys.canvas.width / 5, this.scene.sys.canvas.height - 35, "დაატრიალე ბედის ბორბალი", {
+        this.prizeText = this.scene.add.text(this.scene.sys.canvas.width / 5, this.scene.sys.canvas.height - 40, "დაატრიალე ბედის ბორბალი", {
             font: "bold 24px Arial",
             align: "center",
             color: "black"
@@ -81,7 +81,7 @@ export class Wheel {
                 scene.sound.play('nadugi');
                 break;
             case 2:
-                console.log('222');
+                scene.sound.play('mh');
                 break;
             case 3:
                 scene.sound.play('tyorini');
@@ -93,7 +93,7 @@ export class Wheel {
                 scene.sound.play('nadugi');
                 break;
             case 6:
-                console.log('666');
+                scene.sound.play('mh');
                 break;
             case 7:
                 scene.sound.play('tyorini');

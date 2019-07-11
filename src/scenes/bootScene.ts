@@ -12,6 +12,7 @@ export class BootScene extends Phaser.Scene {
         this.load.audio('tyorini','./src/assets/sounds/tyorini.mp3');
         this.load.audio('nadugi','./src/assets/sounds/nadugi.mp3');
         this.load.audio('bublijuja','./src/assets/sounds/bublijuja.mp3');
+        this.load.audio('mh','./src/assets/sounds/mh.mp3');
     }
 
     update(): void {
