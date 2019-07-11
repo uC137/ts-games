@@ -64,6 +64,7 @@ export class Wheel {
                     // displaying prize text
                     that.prizeText.setText("თქვენ ამოგივიდათ: " + that.slicePrizes[prize]);
                     that.soundMatch(prize, that.scene);
+
                     // player can spin again
                     that.canSpin = true;
                 }
@@ -72,7 +73,7 @@ export class Wheel {
 
     }
 
-    soundMatch(key, scene: GameScene) {
+    soundMatch(key, scene: GameScene) : void {
         switch (key) {
             case 0:
                 scene.sound.play('bublijuja');
@@ -85,6 +86,7 @@ export class Wheel {
                 break;
             case 3:
                 scene.sound.play('tyorini');
+                scene.cameras.main.shake(300);
                 break;
             case 4:
                 scene.sound.play('bublidona');
@@ -97,6 +99,7 @@ export class Wheel {
                 break;
             case 7:
                 scene.sound.play('tyorini');
+                scene.cameras.main.shake(300);
                 break;
         }
     }
