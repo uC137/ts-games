@@ -8,9 +8,10 @@ export class BootScene extends Phaser.Scene {
         this.load.image('wheel', './src/assets/images/wheel.png');
         this.load.image('pin', './src/assets/images/pin.png');
 
-        this.load.audio('sample','./src/sounds/sample.mp3')
-        this.load.audio('bublidona','./src/sounds/bublidona.aac')
-        this.load.audio('tyorini','./src/sounds/tyorini.aac')
+        this.load.audio('bublidona','./src/assets/sounds/bublidona.mp3');
+        this.load.audio('tyorini','./src/assets/sounds/tyorini.mp3');
+        this.load.audio('nadugi','./src/assets/sounds/nadugi.mp3');
+        this.load.audio('bublijuja','./src/assets/sounds/bublijuja.mp3');
     }
 
     update(): void {

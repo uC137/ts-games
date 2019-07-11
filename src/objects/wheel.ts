@@ -5,13 +5,13 @@ export class Wheel {
     public canSpin: boolean;
     public slices = 8;
     public rotationTime = 3000;
-    public slicePrizes = ["A KEY!!!", "50 STARS", "500 STARS", "BAD LUCK!!!", "200 STARS", "100 STARS", "150 STARS", "BAD LUCK!!!"];
+    public slicePrizes = ["ბუბლი ჯუჯა!!!", "50 ნადუღი", "500 STARS", "ტყორინი", "200 ბუბლიდონა", "100 ნადუღი", "150 STARS", "ტყორინი"];
     public prizeText: Phaser.GameObjects.Text;
 
     constructor(scene: GameScene) {
         this.scene = scene;
-        this.prizeText = this.scene.add.text(this.scene.sys.canvas.width / 3, this.scene.sys.canvas.height - 35, "Spin the wheel", {
-            font: "bold 32px Arial",
+        this.prizeText = this.scene.add.text(this.scene.sys.canvas.width / 5, this.scene.sys.canvas.height - 35, "დაატრიალე ბედის ბორბალი", {
+            font: "bold 24px Arial",
             align: "center",
             color: "black"
         });
@@ -62,7 +62,8 @@ export class Wheel {
 
                 onComplete: function (tween) {
                     // displaying prize text
-                    that.prizeText.setText(that.slicePrizes[prize]);
+                    that.prizeText.setText("თქვენ ამოგივიდათ: " + that.slicePrizes[prize]);
+                    that.soundMatch(prize, that.scene);
                     // player can spin again
                     that.canSpin = true;
                 }
@@ -71,4 +72,32 @@ export class Wheel {
 
     }
 
+    soundMatch(key, scene: GameScene) {
+        switch (key) {
+            case 0:
+                scene.sound.play('bublijuja');
+                break;
+            case 1:
+                scene.sound.play('nadugi');
+                break;
+            case 2:
+                console.log('222');
+                break;
+            case 3:
+                scene.sound.play('tyorini');
+                break;
+            case 4:
+                scene.sound.play('bublidona');
+                break;
+            case 5:
+                scene.sound.play('nadugi');
+                break;
+            case 6:
+                console.log('666');
+                break;
+            case 7:
+                scene.sound.play('tyorini');
+                break;
+        }
+    }
 }
