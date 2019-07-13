@@ -5,11 +5,10 @@ import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
 const config: GameConfig = {
-    title: "Snake",
-    version: "1.1",
-    width: 400,
-    height: 224,
-    zoom: 3,
+    title: "BirdMan",
+    version: "1.0",
+    width: 390,
+    height: 600,
     type: Phaser.AUTO,
     parent: "game",
     scene: [BootScene, MainMenuScene, GameScene],
@@ -18,9 +17,14 @@ const config: GameConfig = {
         mouse: false,
         touch: false,
         gamepad: false
+    }, physics: {
+        default: "arcade",
+        arcade: {
+            gravity: {y: 300}
+        }
     },
-    backgroundColor: "#000000",
-    render: {pixelArt: true, antialias: false}
+    backgroundColor: "#98d687",
+    render: { pixelArt: true, antialias: false }
 };
 
 // game class
