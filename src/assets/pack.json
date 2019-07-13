@@ -18,6 +18,20 @@
         "url": "src/assets/images/bird.png"
       },
       {
+        "type": "image",
+        "key": "uch",
+        "url": "src/assets/images/uch.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "finger",
+        "url": "src/assets/sprites/finger.png",
+        "frameConfig": {
+          "frameWidth": 106,
+          "frameHeight": 220
+        }
+      },
+      {
         "type": "spritesheet",
         "key": "pipe",
         "url": "src/assets/sprites/pipe.png",

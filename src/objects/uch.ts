@@ -1,5 +1,5 @@
 
-export class Bird extends Phaser.GameObjects.Image {
+export class Uch extends Phaser.GameObjects.Image {
     private jumpKey: Phaser.Input.Keyboard.Key;
     private isDead: boolean;
     private isFlapping: boolean;
@@ -8,7 +8,7 @@ export class Bird extends Phaser.GameObjects.Image {
     constructor(params) {
         super(params.scene, params.x, params.y, params.key, params.frame);
         // image
-        this.setScale(3);
+        this.setScale(1);
         this.setOrigin(0, 0);
 
         // variables
@@ -18,7 +18,7 @@ export class Bird extends Phaser.GameObjects.Image {
         // physics
         this.scene.physics.world.enable(this);
         this.body.setGravityY(1000);
-        this.body.setSize(17, 12);
+        this.body.setSize(40, 50);
 
         // input
         this.jumpKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);

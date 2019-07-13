@@ -16,7 +16,7 @@ export class MainMenuScene extends Phaser.Scene {
     }
 
     create(): void {
-        this.titleBitmapText = this.add.bitmapText(0, 200, "font", "BIRD MAN", 30);
+        this.titleBitmapText = this.add.bitmapText(0, 200, "font", "FLAPPY MAN", 30);
         this.titleBitmapText.x = this.getCenterXPositionOfBitmapText(this.titleBitmapText.width);
         this.playBitmapText = this.add.bitmapText(0, 300, "font", "SPACE: PLAY", 25);
         this.playBitmapText.x = this.getCenterXPositionOfBitmapText(this.playBitmapText.width);

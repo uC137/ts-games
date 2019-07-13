@@ -1,9 +1,9 @@
 import {Pipe} from "../objects/pipe";
-import {Bird} from "../objects/bird";
+import {Uch} from "../objects/uch";
 
 
 export class GameScene extends Phaser.Scene {
-    private bird: Bird;
+    private uch: Uch;
     private pipes: Phaser.GameObjects.Group;
     private background: Phaser.GameObjects.TileSprite;
     private scoreText: Phaser.GameObjects.BitmapText;
@@ -23,7 +23,7 @@ export class GameScene extends Phaser.Scene {
         this.scoreText = this.add.bitmapText(this.sys.canvas.width / 2 - 14, 30, "font", this.registry.values.score).setDepth(2);
 
         this.pipes = this.add.group({});
-        this.bird = new Bird({scene: this, x: 50, y: 100, key: "bird"});
+        this.uch = new Uch({scene: this, x: 50, y: 100, key: "uch"});
 
         this.addNewRowOfPipes();
         this.timer = this.time.addEvent({delay: 1100, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
@@ -31,10 +31,10 @@ export class GameScene extends Phaser.Scene {
 
 
     update(): void {
-        if (!this.bird.getDead()) {
+        if (!this.uch.getDead()) {
             this.background.tilePositionX += 6;
-            this.bird.update();
-            this.physics.overlap(this.bird, this.pipes, () => this.bird.setDead(true), null, this);
+            this.uch.update();
+            this.physics.overlap(this.uch, this.pipes, () => this.uch.setDead(true), null, this);
         }else{
             Phaser.Actions.Call(
                 this.pipes.getChildren(), function (pipe) {
@@ -42,7 +42,7 @@ export class GameScene extends Phaser.Scene {
                 }, this);
         }
 
-        if (this.bird.y > this.sys.canvas.height) {
+        if (this.uch.y > this.sys.canvas.height) {
             this.scene.start("MainMenuScene");
         }
     }
