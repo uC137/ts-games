@@ -1,4 +1,5 @@
 import {Pipe} from "../objects/pipe";
+import {Bird} from "../objects/bird";
 
 
 export class GameScene extends Phaser.Scene {
@@ -7,6 +8,7 @@ export class GameScene extends Phaser.Scene {
     private background: Phaser.GameObjects.TileSprite;
     private scoreText: Phaser.GameObjects.BitmapText;
     private timer: Phaser.Time.TimerEvent;
+    private bird: Bird;
 
     constructor() {
         super({key: "GameScene"});
@@ -22,17 +24,28 @@ export class GameScene extends Phaser.Scene {
         this.scoreText = this.add.bitmapText(this.sys.canvas.width / 2 - 14, 30, "font", this.registry.values.score).setDepth(2);
         this.pipes = this.add.group({});
 
+        this.bird = new Bird({scene: this, x: 50, y: 100, key: "bird"});
+
         this.addNewRowOfPipes();
-        this.timer = this.time.addEvent({delay: 1500, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
+        this.timer = this.time.addEvent({delay: 1000, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
     }
 
 
     update(time: number): void {
+        if (!this.bird.getDead()) {
+            this.background.tilePositionX += 4;
+            this.bird.update();
+            this.physics.overlap(this.bird, this.pipes, () => this.bird.setDead(true), null, this);
+        }else{
+            Phaser.Actions.Call(
+                this.pipes.getChildren(), function (pipe) {
+                    pipe.body.setVelocityX(0);
+                }, this);
+        }
 
-        Phaser.Actions.Call(
-            this.pipes.getChildren(), function (pipe) {
-                pipe.body.setVelocityX(0);
-            }, this);
+        if (this.bird.y > this.sys.canvas.height) {
+            this.scene.start("MainMenuScene");
+        }
     }
 
 
@@ -48,11 +61,11 @@ export class GameScene extends Phaser.Scene {
         for (let i = 0; i < 10; i++) {
             if (i !== hole && i !== hole + 1 && i !== hole + 2) {
                 if (i === hole - 1) {
-                    this.addPipe(400, i * 60, 0);
+                    this.addPipe(600, i * 60, 0);
                 } else if (i === hole + 3) {
-                    this.addPipe(400, i * 60, 1);
+                    this.addPipe(600, i * 60, 1);
                 } else {
-                    this.addPipe(400, i * 60, 2);
+                    this.addPipe(600, i * 60, 2);
                 }
             }
         }
