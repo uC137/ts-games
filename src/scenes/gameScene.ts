@@ -23,12 +23,7 @@ export class GameScene extends Phaser.Scene {
         this.pipes = this.add.group({});
 
         this.addNewRowOfPipes();
-        this.timer = this.time.addEvent({
-            delay: 1500,
-            callback: this.addNewRowOfPipes,
-            callbackScope: this,
-            loop: true
-        });
+        this.timer = this.time.addEvent({delay: 1500, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
     }
 
 
@@ -62,6 +57,7 @@ export class GameScene extends Phaser.Scene {
             }
         }
     }
+
 
     private addPipe(x, y, frame): void {
         // create a new pipe at the position x and y and add it to group
