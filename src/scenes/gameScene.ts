@@ -3,12 +3,11 @@ import {Bird} from "../objects/bird";
 
 
 export class GameScene extends Phaser.Scene {
-
+    private bird: Bird;
     private pipes: Phaser.GameObjects.Group;
     private background: Phaser.GameObjects.TileSprite;
     private scoreText: Phaser.GameObjects.BitmapText;
     private timer: Phaser.Time.TimerEvent;
-    private bird: Bird;
 
     constructor() {
         super({key: "GameScene"});
@@ -22,18 +21,18 @@ export class GameScene extends Phaser.Scene {
         // objects
         this.background = this.add.tileSprite(0, 0, 590, 600, "background").setOrigin(0, 0);
         this.scoreText = this.add.bitmapText(this.sys.canvas.width / 2 - 14, 30, "font", this.registry.values.score).setDepth(2);
-        this.pipes = this.add.group({});
 
+        this.pipes = this.add.group({});
         this.bird = new Bird({scene: this, x: 50, y: 100, key: "bird"});
 
         this.addNewRowOfPipes();
-        this.timer = this.time.addEvent({delay: 1000, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
+        this.timer = this.time.addEvent({delay: 1100, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
     }
 
 
-    update(time: number): void {
+    update(): void {
         if (!this.bird.getDead()) {
-            this.background.tilePositionX += 4;
+            this.background.tilePositionX += 6;
             this.bird.update();
             this.physics.overlap(this.bird, this.pipes, () => this.bird.setDead(true), null, this);
         }else{

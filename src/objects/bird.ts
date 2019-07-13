@@ -5,7 +5,7 @@ export class Bird extends Phaser.GameObjects.Image {
     private isFlapping: boolean;
 
 
-    constructor(params){
+    constructor(params) {
         super(params.scene, params.x, params.y, params.key, params.frame);
         // image
         this.setScale(3);
@@ -25,26 +25,26 @@ export class Bird extends Phaser.GameObjects.Image {
         this.scene.add.existing(this);
     }
 
-    public update(): void {
+    update(): void {
         // handle angle change
         if (this.angle < 30) {
             this.angle += 2;
         }
 
+        // handle input
         if (this.jumpKey.isDown && !this.isFlapping) {
+            console.log(this.y);
             this.isFlapping = true;
             this.body.setVelocityY(-350);
             this.scene.tweens.add({targets: this, props: {angle: -20}, duration: 150, ease: "Power0"});
-
-        }else if (this.jumpKey.isUp && !this.isFlapping) {
+        } else if (this.jumpKey.isUp && this.isFlapping) {
             this.isFlapping = false;
         }
 
         // check if off the screen
-        if (this.y + this.height > this.scene.sys.canvas.height) {
+        if (this.y + this.height > this.scene.sys.canvas.height || this.y < 0) {
             this.isDead = true;
         }
-
     }
 
     public getDead(): boolean {
