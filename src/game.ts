@@ -7,7 +7,7 @@ import {GameScene} from "./scenes/gameScene";
 const config: GameConfig = {
     title: "BirdMan",
     version: "1.0",
-    width: 390,
+    width: 590,
     height: 600,
     type: Phaser.AUTO,
     parent: "game",
