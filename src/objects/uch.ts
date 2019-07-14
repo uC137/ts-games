@@ -1,4 +1,3 @@
-
 export class Uch extends Phaser.GameObjects.Sprite {
     private jumpKey: Phaser.Input.Keyboard.Key;
     private isDead: boolean;
@@ -64,7 +63,7 @@ export class Uch extends Phaser.GameObjects.Sprite {
 
     public setDead(dead: boolean): void {
         this.isDead = dead;
-        if (this.isDead){
+        if (this.isDead) {
             this.anims.stop();
             this.setFrame(2);
             this.randomSound(dead);
@@ -72,7 +71,7 @@ export class Uch extends Phaser.GameObjects.Sprite {
     }
 
 
-    public randomSound(dead = false): void{
+    public randomSound(dead = false): void {
         if (dead) {
             switch (Math.floor(Math.random() * 2) + 1) {
                 case 1:
@@ -82,7 +81,7 @@ export class Uch extends Phaser.GameObjects.Sprite {
                     this.scene.sound.play('dead2');
                     break;
             }
-        }else{
+        } else {
             this.scene.sound.play('mh');
         }
 

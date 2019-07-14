@@ -35,7 +35,7 @@ export class GameScene extends Phaser.Scene {
             this.background.tilePositionX += 6;
             this.uch.update();
             this.physics.overlap(this.uch, this.pipes, () => this.uch.setDead(true), null, this);
-        }else{
+        } else {
             Phaser.Actions.Call(
                 this.pipes.getChildren(), function (pipe) {
                     pipe.body.setVelocityX(0);
