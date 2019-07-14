@@ -43,6 +43,7 @@ export class Uch extends Phaser.GameObjects.Sprite {
         this.anims.play("ciko", true);
         // handle input
         if (this.jumpKey.isDown && !this.isFlapping) {
+            this.randomSound();
             this.isFlapping = true;
             this.body.setVelocityY(-350);
             this.scene.tweens.add({targets: this, props: {angle: -20}, duration: 150, ease: "Power0"});
@@ -53,19 +54,37 @@ export class Uch extends Phaser.GameObjects.Sprite {
         // check if off the screen
         if (this.y + this.height > this.scene.sys.canvas.height || this.y < 0) {
             this.isDead = true;
+            this.randomSound(true);
         }
     }
 
     public getDead(): boolean {
-        if (this.isDead){
-            this.anims.stop();
-            this.setFrame(2);
-        }
         return this.isDead;
     }
 
     public setDead(dead: boolean): void {
         this.isDead = dead;
+        if (this.isDead){
+            this.anims.stop();
+            this.setFrame(2);
+            this.randomSound(dead);
+        }
     }
 
+
+    public randomSound(dead = false): void{
+        if (dead) {
+            switch (Math.floor(Math.random() * 2) + 1) {
+                case 1:
+                    this.scene.sound.play('dead1');
+                    break;
+                case 2:
+                    this.scene.sound.play('dead2');
+                    break;
+            }
+        }else{
+            this.scene.sound.play('mh');
+        }
+
+    }
 }
