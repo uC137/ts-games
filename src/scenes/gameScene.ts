@@ -14,7 +14,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     init(): void {
-        this.registry.set("score", 0);
+        this.registry.set("score", -1);
     }
 
     create(): void {
@@ -23,7 +23,7 @@ export class GameScene extends Phaser.Scene {
         this.scoreText = this.add.bitmapText(this.sys.canvas.width / 2 - 14, 30, "font", this.registry.values.score).setDepth(2);
 
         this.pipes = this.add.group({});
-        this.uch = new Uch({scene: this, x: 50, y: 100, key: "uch"});
+        this.uch = new Uch({scene: this, x: 41, y: 53, key: "uchA"});
 
         this.addNewRowOfPipes();
         this.timer = this.time.addEvent({delay: 1100, callback: this.addNewRowOfPipes, callbackScope: this, loop: true});
@@ -72,6 +72,7 @@ export class GameScene extends Phaser.Scene {
 
 
     private addPipe(x, y, frame): void {
+
         // create a new pipe at the position x and y and add it to group
         this.pipes.add(
             new Pipe({scene: this, x: x, y: y, frame: frame, key: "pipe"})

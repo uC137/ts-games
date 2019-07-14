@@ -24,6 +24,15 @@
       },
       {
         "type": "spritesheet",
+        "key": "uchA",
+        "url": "src/assets/sprites/uchA.png",
+        "frameConfig": {
+          "frameWidth": 41,
+          "frameHeight":53
+        }
+      },
+      {
+        "type": "spritesheet",
         "key": "finger",
         "url": "src/assets/sprites/finger.png",
         "frameConfig": {
@@ -34,7 +43,7 @@
       {
         "type": "spritesheet",
         "key": "pipe",
-        "url": "src/assets/sprites/pipe.png",
+        "url": "src/assets/sprites/pipe1.png",
         "frameConfig": {
           "frameWidth": 20,
           "frameHeight": 20

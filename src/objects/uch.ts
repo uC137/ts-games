@@ -1,5 +1,5 @@
 
-export class Uch extends Phaser.GameObjects.Image {
+export class Uch extends Phaser.GameObjects.Sprite {
     private jumpKey: Phaser.Input.Keyboard.Key;
     private isDead: boolean;
     private isFlapping: boolean;
@@ -20,6 +20,15 @@ export class Uch extends Phaser.GameObjects.Image {
         this.body.setGravityY(1000);
         this.body.setSize(40, 50);
 
+        this.scene.anims.create({
+            key: "ciko",
+            frameRate: 6,
+            repeat: -1,
+            frames: this.scene.anims.generateFrameNumbers("uchA", {
+                frames: [0, 1]
+            })
+        });
+
         // input
         this.jumpKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.scene.add.existing(this);
@@ -27,13 +36,13 @@ export class Uch extends Phaser.GameObjects.Image {
 
     update(): void {
         // handle angle change
-        if (this.angle < 30) {
+        if (this.angle < 10) {
             this.angle += 2;
         }
 
+        this.anims.play("ciko", true);
         // handle input
         if (this.jumpKey.isDown && !this.isFlapping) {
-            console.log(this.y);
             this.isFlapping = true;
             this.body.setVelocityY(-350);
             this.scene.tweens.add({targets: this, props: {angle: -20}, duration: 150, ease: "Power0"});
@@ -48,6 +57,10 @@ export class Uch extends Phaser.GameObjects.Image {
     }
 
     public getDead(): boolean {
+        if (this.isDead){
+            this.anims.stop();
+            this.setFrame(2);
+        }
         return this.isDead;
     }
 
