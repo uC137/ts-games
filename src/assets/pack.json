@@ -29,6 +29,11 @@
       },
       {
         "type": "image",
+        "key": "background1",
+        "url": "src/assets/images/bg1.png"
+      },
+      {
+        "type": "image",
         "key": "bird",
         "url": "src/assets/images/bird.png"
       },
@@ -44,15 +49,6 @@
         "frameConfig": {
           "frameWidth": 41,
           "frameHeight": 53
-        }
-      },
-      {
-        "type": "spritesheet",
-        "key": "finger",
-        "url": "src/assets/sprites/finger.png",
-        "frameConfig": {
-          "frameWidth": 106,
-          "frameHeight": 220
         }
       },
       {

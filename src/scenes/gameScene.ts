@@ -19,7 +19,7 @@ export class GameScene extends Phaser.Scene {
 
     create(): void {
         // objects
-        this.background = this.add.tileSprite(0, 0, 590, 600, "background").setOrigin(0, 0);
+        this.background = this.add.tileSprite(0, 0, 590, 600, "background1").setOrigin(0, 0);
         this.scoreText = this.add.bitmapText(this.sys.canvas.width / 2 - 14, 30, "font", this.registry.values.score).setDepth(2);
 
         this.pipes = this.add.group({});
