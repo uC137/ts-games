@@ -1,0 +1,65 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "assets/font/font.png",
+        "fontDataURL": "assets/font/font.fnt"
+      },
+      {
+        "type": "audio",
+        "key": "mh",
+        "url": "assets/sounds/mh.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "dead1",
+        "url": "assets/sounds/dead1.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "dead2",
+        "url": "assets/sounds/dead2.mp3"
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "assets/images/bg.png"
+      },
+      {
+        "type": "image",
+        "key": "background1",
+        "url": "assets/images/bg1.png"
+      },
+      {
+        "type": "image",
+        "key": "bird",
+        "url": "assets/images/bird.png"
+      },
+      {
+        "type": "image",
+        "key": "uch",
+        "url": "assets/images/uch.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "uchA",
+        "url": "assets/sprites/uchA.png",
+        "frameConfig": {
+          "frameWidth": 41,
+          "frameHeight": 53
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "pipe",
+        "url": "assets/sprites/pipe1.png",
+        "frameConfig": {
+          "frameWidth": 20,
+          "frameHeight": 20
+        }
+      }
+    ]
+  }
+}
