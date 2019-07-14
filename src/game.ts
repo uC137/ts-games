@@ -15,7 +15,7 @@ const config: GameConfig = {
     input: {
         keyboard: true,
         mouse: false,
-        touch: false,
+        touch: true,
         gamepad: false
     }, physics: {
         default: "arcade",

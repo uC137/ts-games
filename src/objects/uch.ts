@@ -1,5 +1,5 @@
 export class Uch extends Phaser.GameObjects.Sprite {
-    private jumpKey: Phaser.Input.Keyboard.Key;
+    private jumpKey: Phaser.Input.Keyboard.Key | Phaser.Input.Pointer;
     private isDead: boolean;
     private isFlapping: boolean;
 
@@ -30,6 +30,10 @@ export class Uch extends Phaser.GameObjects.Sprite {
 
         // input
         this.jumpKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.scene.input.on('pointerdown',  (pointer) => {
+            this.jumpKey = this.scene.input.activePointer;
+        },this);
+
         this.scene.add.existing(this);
     }
 
@@ -46,7 +50,7 @@ export class Uch extends Phaser.GameObjects.Sprite {
             this.isFlapping = true;
             this.body.setVelocityY(-350);
             this.scene.tweens.add({targets: this, props: {angle: -20}, duration: 150, ease: "Power0"});
-        } else if (this.jumpKey.isUp && this.isFlapping) {
+        } else if (!this.jumpKey.isDown && this.isFlapping) {
             this.isFlapping = false;
         }
 

@@ -1,6 +1,6 @@
 export class MainMenuScene extends Phaser.Scene {
 
-    private startKey: Phaser.Input.Keyboard.Key;
+    private startKey: Phaser.Input.Keyboard.Key | Phaser.Input.Pointer;
     private titleBitmapText: Phaser.GameObjects.BitmapText;
     private playBitmapText: Phaser.GameObjects.BitmapText;
 
@@ -24,6 +24,10 @@ export class MainMenuScene extends Phaser.Scene {
 
 
     update(): void {
+        this.input.on('pointerdown',  (pointer) => {
+            this.scene.start("GameScene");
+        },this);
+
         if (this.startKey.isDown) {
             this.scene.start("GameScene");
         }
