@@ -1,41 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <link rel="shortcut icon" href="">
     <title>TS Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="bundle.js"></script>
     <style>
-      @font-face {
-        font-family: "Connection";
-      }
+        .container {
 
-      body {
-        font-size: 10px;
-        color: black;
-        background-color: #ffffff
-      }
+            /* Set block height using the viewport height unit, and force it to be full height, even if the containing content does not require it */
+            min-height: 100vh;
 
-      body div.container {
-        text-align: center
-      }
+            /* center this block for larger viewports */
+            margin: 0 auto;
 
-      body div.container h1 {
-        font-family: "Connection", cursive;
-        padding: 0;
-        font-size: 50px
-      }
+            /*Use max-width for better browser handling of small windows
+            http://www.w3schools.com/css/css_max-width.asp
+            */
+            max-width: 31.25em;
 
-      body div.container div#game {
-        display: block;
-        margin-left: auto;
-        margin-right: auto
-      }
+            /* Use min-width to prevent your design from being scrunched up in tiny viewports (and instead be replaced with horizontal scroll bars)
+            */
+            min-width: 18.75em;
+
+            /* Add padding around your content - this is just an arbitrary number */
+            padding: 1em;
+
+
+            /* Add sufficient top padding so the fixed header doesn't cover up main content by defailt.  This value should be a calculated value (eg using calc(), sass, etc):
+            padding for this container + height of app header; Here, that is 1em + 4em */
+            padding-top: 5em;
+
+            /* just used to so we can tell the content block apart from the body block */
+            background-color: white;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <div id="game"></div>
-    </div>
-  </body>
+</head>
+<body>
+<div class="container">
+    <div id="game"></div>
+</div>
+</body>
 </html>
