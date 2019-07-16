@@ -94,7 +94,7 @@
       {
         "type": "image",
         "key": "title",
-        "url": "./src/assets/images/title1.png"
+        "url": "./src/assets/images/title.png"
       },
       {
         "type": "spritesheet",

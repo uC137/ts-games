@@ -1,18 +1,18 @@
 import "phaser";
 import {BootScene} from "./scenes/bootScene";
-import {MainMenuScene} from "./scenes/mainMenuScene";
+import {MenuScene} from "./scenes/mainMenuScene";
 import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
 const config: GameConfig = {
-    title: "TateTute",
+    title: "Tate-Tute",
     version: "1.0",
     width: 160,
     height: 144,
     zoom: 5,
     type: Phaser.AUTO,
     parent: "game",
-    scene: [BootScene, MainMenuScene, GameScene],
+    scene: [BootScene, MenuScene, GameScene],
     input: {
         keyboard: true,
         mouse: false,
