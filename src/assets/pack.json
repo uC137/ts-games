@@ -15,12 +15,12 @@
       {
         "type": "tilemapTiledJSON",
         "key": "level1Room1",
-        "url": "src/assets/maps/level1Room1.json"
+        "url": "src/assets/maps/level1room1.json"
       },
       {
         "type": "tilemapTiledJSON",
         "key": "level1Room2",
-        "url": "src/assets/maps/level1Room2.json"
+        "url": "src/assets/maps/level1room2.json"
       },
       {
         "type": "image",
@@ -94,7 +94,7 @@
       {
         "type": "image",
         "key": "title",
-        "url": "./src/assets/images/title.png"
+        "url": "./src/assets/images/title1.png"
       },
       {
         "type": "spritesheet",
