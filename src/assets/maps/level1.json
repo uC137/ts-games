@@ -1210,15 +1210,15 @@
                  "y":120
                 }, 
                 {
-                 "height":15,
+                 "height":12,
                  "id":298,
                  "name":"plant",
                  "rotation":0,
                  "type":"plant",
                  "visible":true,
-                 "width":15.5,
-                 "x":112.25,
-                 "y":80.75
+                 "width":12,
+                 "x":119.75,
+                 "y":88
                 }],
          "opacity":1,
          "type":"objectgroup",

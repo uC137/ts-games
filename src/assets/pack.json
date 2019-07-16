@@ -137,8 +137,8 @@
         "key": "plant",
         "url": "./src/assets/collectibles/plant.png",
         "frameConfig": {
-          "frameWidth": 80,
-          "frameHeight": 85
+          "frameWidth": 12,
+          "frameHeight": 10
         }
       },
       {

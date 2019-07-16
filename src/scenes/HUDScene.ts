@@ -10,7 +10,7 @@ export class HUDScene extends Phaser.Scene {
 
     create(): void {
         this.textElements = new Map([
-            ["LIVES", this.addText(0, 0, `TATEx ${this.registry.get("lives")}`)],
+            ["LIVES", this.addText(0, 0, `TATE ${this.registry.get("lives")}`)],
             ["WORLDTIME", this.addText(80, 0, `${this.registry.get("worldTime")}`)],
             ["SCORE", this.addText(40, 8, `${this.registry.get("score")}`)],
             ["COINS", this.addText(80, 8, `${this.registry.get("coins")}`)],

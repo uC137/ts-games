@@ -13,6 +13,7 @@ const config: GameConfig = {
     zoom: 5,
     type: Phaser.AUTO,
     parent: "game",
+    backgroundColor: "#f8f8f8",
     scene: [BootScene, MenuScene, HUDScene, GameScene],
     input: {
         keyboard: true,
