@@ -26,10 +26,4 @@ export class Collectible extends Phaser.GameObjects.Sprite {
   }
 
   update(): void {}
-
-  private collected(): void {
-    this.destroy();
-    this.currentScene.registry.values.score += this.points;
-    this.currentScene.events.emit("scoreChanged");
-  }
 }

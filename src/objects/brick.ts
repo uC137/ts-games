@@ -1,29 +1,26 @@
+/**
+ * @author       Digitsensitive <digit.sensitivee@gmail.com>
+ * @copyright    2019 Digitsensitive
+ * @description  Super Mario Land: Brick
+ * @license      Digitsensitive
+ */
 
-import { Collectible } from "./collectible";
-
-export class Box extends Phaser.GameObjects.Sprite {
+export class Brick extends Phaser.GameObjects.Sprite {
   // variables
   private currentScene: Phaser.Scene;
-  private boxContent: string;
-  private content: Collectible;
-  private hitBoxTimeline: Phaser.Tweens.Timeline;
+  protected destroyingValue: number;
 
   constructor(params) {
     super(params.scene, params.x, params.y, params.key, params.frame);
 
     // variables
     this.currentScene = params.scene;
-    this.boxContent = params.content;
-
+    this.destroyingValue = params.value;
     this.initSprite();
     this.currentScene.add.existing(this);
   }
 
   private initSprite() {
-    // variables
-    this.content = null;
-    this.hitBoxTimeline = this.currentScene.tweens.createTimeline({});
-
     // sprite
     this.setOrigin(0, 0);
     this.setFrame(0);
@@ -35,6 +32,6 @@ export class Box extends Phaser.GameObjects.Sprite {
     this.body.setImmovable(true);
   }
 
-  update(): void {}
-
+  update(): void {
+  }
 }

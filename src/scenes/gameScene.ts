@@ -1,5 +1,8 @@
 import {Box} from "../objects/box";
 import {Plant} from "../objects/plant";
+import {Brick} from "../objects/brick";
+import {Collectible} from "../objects/collectible";
+import {Goomba} from "../objects/goomba";
 
 export class GameScene extends Phaser.Scene {
     private foregroundLayer: Phaser.Tilemaps.StaticTilemapLayer;
@@ -60,12 +63,23 @@ export class GameScene extends Phaser.Scene {
 
         objects.forEach(object => {
 
-            if (object.type === "box") {
-                this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties.content}));
-            }
 
             if (object.type === "plant") {
                 this.plant.add(new Plant({scene: this, x: object.x, y: object.y, key: "plant"}));
+            }
+            if (object.type === "box") {
+                this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties.content}));
+            }
+            if (object.type === "brick") {
+                this.bricks.add(new Brick({scene: this, x: object.x, y: object.y, key: "brick"}));
+            }
+
+            if (object.type === "collectible") {
+                this.collectibles.add(new Collectible({scene: this, x: object.x, y: object.y, key: object.properties.kindOfCollectible,points: 100}));
+            }
+
+            if (object.type === "goomba") {
+                this.enemies.add(new Goomba({scene: this, x: object.x, y: object.y, key: "goomba"}));
             }
 
 
