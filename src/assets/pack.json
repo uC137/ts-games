@@ -134,6 +134,15 @@
       },
       {
         "type": "spritesheet",
+        "key": "plant",
+        "url": "./src/assets/collectibles/plant.png",
+        "frameConfig": {
+          "frameWidth": 80,
+          "frameHeight": 85
+        }
+      },
+      {
+        "type": "spritesheet",
         "key": "star",
         "url": "./src/assets/collectibles/star.png",
         "frameConfig": {

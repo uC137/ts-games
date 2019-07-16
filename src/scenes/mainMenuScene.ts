@@ -9,9 +9,9 @@ export class MenuScene extends Phaser.Scene {
     }
 
     init(): void {
-        this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.startKey.isDown = false;
-        this.initGlobalDataManager();
+        this.initRegistryValues();
     }
 
     create(): void {
@@ -27,7 +27,7 @@ export class MenuScene extends Phaser.Scene {
         }
     }
 
-    private initGlobalDataManager(): void {
+    private initRegistryValues(): void {
         this.registry.set("time", 400);
         this.registry.set("level", "level1");
         this.registry.set("world", "1-1");

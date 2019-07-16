@@ -2,6 +2,7 @@ import "phaser";
 import {BootScene} from "./scenes/bootScene";
 import {MenuScene} from "./scenes/mainMenuScene";
 import {GameScene} from "./scenes/gameScene";
+import {HUDScene} from "./scenes/HUDScene";
 
 // main game configuration
 const config: GameConfig = {
@@ -12,17 +13,17 @@ const config: GameConfig = {
     zoom: 5,
     type: Phaser.AUTO,
     parent: "game",
-    scene: [BootScene, MenuScene, GameScene],
+    scene: [BootScene, MenuScene, HUDScene, GameScene],
     input: {
         keyboard: true,
         mouse: false,
         touch: false,
         gamepad: false
     },
-    physics : {
+    physics: {
         default: "arcade",
         arcade: {
-            gravity: { y: 475 },
+            gravity: {y: 475},
             debug: false
         }
     },
