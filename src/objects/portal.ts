@@ -1,7 +1,7 @@
 export class Portal extends Phaser.GameObjects.Zone {
   // variables
   private currentScene: Phaser.Scene;
-  private portalDestinationForMario: any;
+  private portalDestinationForTate: any;
 
 
   constructor(params) {
@@ -9,9 +9,13 @@ export class Portal extends Phaser.GameObjects.Zone {
 
     // variables
     this.currentScene = params.scene;
-    this.portalDestinationForMario = params.spawn;
+    this.portalDestinationForTate = params.spawn;
     this.initZone();
     this.currentScene.add.existing(this);
+  }
+
+  public getPortalDestination(): {} {
+    return this.portalDestinationForTate;
   }
 
   private initZone() {

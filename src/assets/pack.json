@@ -43,6 +43,15 @@
       },
       {
         "type": "spritesheet",
+        "key": "tate",
+        "url": "./src/assets/sprites/tate.png",
+        "frameConfig": {
+          "frameWidth": 18,
+          "frameHeight": 16
+        }
+      },
+      {
+        "type": "spritesheet",
         "key": "box",
         "url": "./src/assets/sprites/box.png",
         "frameConfig": {
