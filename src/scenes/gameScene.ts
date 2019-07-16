@@ -62,6 +62,7 @@ export class GameScene extends Phaser.Scene {
 
 
     update(time: number): void {
+        this.player.update();
     }
 
 
