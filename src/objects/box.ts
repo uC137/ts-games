@@ -54,7 +54,6 @@ export class Box extends Phaser.GameObjects.Sprite {
     }
 
     popUpCollectible(): void {
-        console.log('pop');
         this.content.body.setVelocity(30, -50);
         this.content.body.setAllowGravity(true);
         this.content.body.setGravityY(-300);

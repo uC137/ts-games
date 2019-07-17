@@ -14,7 +14,7 @@
                         {
                          "name":"content",
                          "type":"string",
-                         "value":"rotatingCoin"
+                         "value":"plant"
                         }],
                  "rotation":0,
                  "type":"box",
@@ -1208,17 +1208,6 @@
                  "width":16,
                  "x":2384,
                  "y":120
-                }, 
-                {
-                 "height":8,
-                 "id":298,
-                 "name":"plant",
-                 "rotation":0,
-                 "type":"plant",
-                 "visible":true,
-                 "width":8,
-                 "x":119.75,
-                 "y":88
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -1,5 +1,5 @@
 import {Box} from "../objects/box";
-import {Plant} from "../objects/plant";
+// import {Plant} from "../objects/plant";
 import {Brick} from "../objects/brick";
 import {Collectible} from "../objects/collectible";
 import {Goomba} from "../objects/goomba";
@@ -19,7 +19,7 @@ export class GameScene extends Phaser.Scene {
     private enemies: Phaser.GameObjects.Group;
     private platforms: Phaser.GameObjects.Group;
     private portals: Phaser.GameObjects.Group;
-    private plant: Phaser.GameObjects.Group;
+    // private plant: Phaser.GameObjects.Group;
     private player: Tate;
 
     constructor() {
@@ -49,7 +49,7 @@ export class GameScene extends Phaser.Scene {
         this.collectibles = this.add.group({runChildUpdate: true});
         this.enemies = this.add.group({runChildUpdate: true});
         this.platforms = this.add.group({runChildUpdate: true});
-        this.plant = this.add.group({runChildUpdate: true});
+        // this.plant = this.add.group({runChildUpdate: true});
 
 
         this.loadObjectsFromTilemap();
@@ -121,10 +121,8 @@ export class GameScene extends Phaser.Scene {
 
                     break;
                 }
-                case "mushroom": {
-                    _box.popUpCollectible();
-                    break;
-                }
+                case "plant":
+                case "mushroom":
                 case "star": {
                     _box.popUpCollectible();
                     break;
@@ -162,9 +160,9 @@ export class GameScene extends Phaser.Scene {
                 this.player = new Tate({scene: this, x: this.registry.get("spawn").x, y: this.registry.get("spawn").y, key: "tate"});
             }
 
-            if (object.type === "plant") {
-                this.plant.add(new Plant({scene: this, x: object.x, y: object.y, key: "plant"}));
-            }
+            // if (object.type === "plant") {
+            //     this.plant.add(new Plant({scene: this, x: object.x, y: object.y, key: "plant"}));
+            // }
             if (object.type === "box") {
                 this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties[0].value}));
             }
