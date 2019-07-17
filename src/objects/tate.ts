@@ -48,7 +48,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
         // physics
         this.currentScene.physics.world.enable(this);
         this.body.maxVelocity.x = 50;
-        this.body.maxVelocity.y = 0; //300
+        this.body.maxVelocity.y = 300;
     }
 
     update(): void {
