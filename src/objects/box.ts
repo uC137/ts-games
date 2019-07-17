@@ -7,6 +7,11 @@ export class Box extends Phaser.GameObjects.Sprite {
     private content: Collectible;
     private hitBoxTimeline: Phaser.Tweens.Timeline;
 
+    getContent(): Phaser.GameObjects.Sprite {
+        return this.content;
+    }
+
+
     constructor(params) {
         super(params.scene, params.x, params.y, params.key, params.frame);
 
@@ -63,10 +68,6 @@ export class Box extends Phaser.GameObjects.Sprite {
         this.hitBoxTimeline.add({targets: this.content, props: props, delay: 0, duration: duration, ease: "Power0", onComplete: complete});
     }
 
-    getContent(): Phaser.GameObjects.Sprite {
-        return this.content;
-    }
-
     addCoinAndScore(coin: number, score: number): void {
         this.currentScene.registry.values.coins += coin;
         this.currentScene.events.emit("coinsChanged");
@@ -74,7 +75,6 @@ export class Box extends Phaser.GameObjects.Sprite {
         this.currentScene.events.emit("scoreChanged");
     }
 
-    update(): void {
-    }
+    update(): void {}
 
 }

@@ -93,7 +93,7 @@
                         {
                          "name":"content",
                          "type":"string",
-                         "value":"coin"
+                         "value":"rotatingCoin"
                         }],
                  "rotation":0,
                  "type":"box",
@@ -127,7 +127,7 @@
                         {
                          "name":"content",
                          "type":"string",
-                         "value":"coin"
+                         "value":"rotatingCoin"
                         }],
                  "rotation":0,
                  "type":"box",
@@ -1210,13 +1210,13 @@
                  "y":120
                 }, 
                 {
-                 "height":12,
+                 "height":8,
                  "id":298,
                  "name":"plant",
                  "rotation":0,
                  "type":"plant",
                  "visible":true,
-                 "width":12,
+                 "width":8,
                  "x":119.75,
                  "y":88
                 }],

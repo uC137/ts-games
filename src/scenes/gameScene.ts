@@ -65,23 +65,23 @@ export class GameScene extends Phaser.Scene {
         // COLLIDERS
         // *****************************************************************
         this.physics.add.collider(this.player, this.foregroundLayer);
-        this.physics.add.collider(this.player, this.bricks);
         this.physics.add.collider(this.enemies, this.foregroundLayer);
         this.physics.add.collider(this.enemies, this.boxes);
         this.physics.add.collider(this.enemies, this.bricks);
+        this.physics.add.collider(this.player, this.bricks);
+
 
         this.physics.add.collider(this.player, this.boxes, this.playerHitBox, null, this);
-
-        this.physics.add.overlap(this.player, this.enemies);
-        this.physics.add.overlap(this.player, this.portals);
-        this.physics.add.overlap(this.player, this.platforms);
-        this.physics.add.overlap(this.player, this.collectibles);
+        // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
+        // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
+        // this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
+        // this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
 
 
     }
 
 
-    update(time: number): void {
+    update(): void {
         this.player.update();
     }
 
@@ -166,7 +166,7 @@ export class GameScene extends Phaser.Scene {
                 this.plant.add(new Plant({scene: this, x: object.x, y: object.y, key: "plant"}));
             }
             if (object.type === "box") {
-                this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties.content}));
+                this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties[0].value}));
             }
             if (object.type === "brick") {
                 this.bricks.add(new Brick({scene: this, x: object.x, y: object.y, key: "brick"}));
