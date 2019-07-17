@@ -1,12 +1,12 @@
 export class Tate extends Phaser.GameObjects.Sprite {
     // variables
-    private currentScene: Phaser.Scene;
-    private tateSize: string;
-    private acceleration: number;
-    private isJumping: boolean;
-    private isDying: boolean;
-    private isVulnerable: boolean;
-    private vulnerableCounter: number;
+    public currentScene: Phaser.Scene;
+    public tateSize: string;
+    public acceleration: number;
+    public isJumping: boolean;
+    public isDying: boolean;
+    public isVulnerable: boolean;
+    public vulnerableCounter: number;
 
     // input
     private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -80,7 +80,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
 
     private handleInput() {
         if (this.y > this.currentScene.sys.canvas.height) {
-            // mario fell into a hole
+            // tate fell into a hole
             this.isDying = true;
         }
 
@@ -127,7 +127,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
         } else if (this.body.velocity.x !== 0) {
             // tate is moving horizontal
 
-            // check if mario is making a quick direction change
+            // check if tate is making a quick direction change
             if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
                 if (this.tateSize === "small") {
                     this.setFrame(5);
@@ -157,9 +157,9 @@ export class Tate extends Phaser.GameObjects.Sprite {
         }
     }
 
-    shrinkMario(): void {
+    shrinkTate(): void {
         this.tateSize = "small";
-        this.currentScene.registry.set("marioSize", this.tateSize);
+        this.currentScene.registry.set("tateSize", this.tateSize);
         this.adjustPhysicBodyToSmallSize();
     }
 
@@ -178,5 +178,29 @@ export class Tate extends Phaser.GameObjects.Sprite {
     private adjustPhysicBodyToBigSize(): void {
         this.body.setSize(8, 16);
         this.body.setOffset(4, 0);
+    }
+
+    gotHit(): void {
+        this.isVulnerable = false;
+        if (this.tateSize === "big") {
+            this.shrinkTate();
+        } else {
+            // tate is dying
+            this.isDying = true;
+
+            // sets acceleration, velocity and speed to zero
+            // stop all animations
+            this.body.stop();
+            this.anims.stop();
+
+            // make last dead jump and turn off collision check
+            this.body.setVelocityY(-180);
+
+            // this.body.checkCollision.none did not work for me
+            this.body.checkCollision.up = false;
+            this.body.checkCollision.down = false;
+            this.body.checkCollision.left = false;
+            this.body.checkCollision.right = false;
+        }
     }
 }

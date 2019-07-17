@@ -5,6 +5,7 @@ import {Collectible} from "../objects/collectible";
 import {Goomba} from "../objects/goomba";
 import {Portal} from "../objects/portal";
 import {Tate} from "../objects/tate";
+import {Enemy} from "../objects/enemy";
 
 export class GameScene extends Phaser.Scene {
     private backgroundLayer: Phaser.Tilemaps.StaticTilemapLayer;
@@ -74,7 +75,7 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.player, this.boxes, this.playerHitBox, null, this);
         // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
         // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
-        // this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
+        this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
         this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
 
 
@@ -202,5 +203,29 @@ export class GameScene extends Phaser.Scene {
             }
         }
         _collectible.collected();
+    }
+
+    private handlePlayerEnemyOverlap(_player: Tate, _enemy) {
+        if (_player.body.touching.down && _enemy.body.touching.up) {
+            // player hit enemy on top
+
+            this.add.tween({
+                targets: _enemy,
+                props: { alpha: 0 },
+                duration: 1000,
+                ease: "Power0",
+                yoyo: false,
+                onComplete: function() {
+                    _enemy.isDead();
+                }
+            });
+
+        }else{
+            // player got hit from the side or on the head
+            if (_player.isVulnerable) {
+                _player.gotHit();
+            }
+        }
+
     }
 }

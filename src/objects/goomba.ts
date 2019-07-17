@@ -14,4 +14,15 @@ export class Goomba extends Enemy {
     this.dyingScoreValue = 100;
   }
 
+
+  protected gotHitOnHead(): void {
+    this.isDying = true;
+    this.setFrame(2);
+    //this.showAndAddScore();
+  }
+
+  protected isDead(): void {
+    this.destroy();
+  }
+
 }

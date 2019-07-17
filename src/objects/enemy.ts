@@ -1,10 +1,3 @@
-/**
- * @author       Digitsensitive <digit.sensitivee@gmail.com>
- * @copyright    2019 Digitsensitive
- * @description  Super Mario Land: Enemy
- * @license      Digitsensitive
- */
-
 export class Enemy extends Phaser.GameObjects.Sprite {
   // variables
   protected currentScene: Phaser.Scene;

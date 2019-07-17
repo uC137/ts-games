@@ -146,7 +146,7 @@
         "key": "plant",
         "url": "./src/assets/collectibles/plant.png",
         "frameConfig": {
-          "frameWidth": 12,
+          "frameWidth": 11,
           "frameHeight": 10
         }
       },
