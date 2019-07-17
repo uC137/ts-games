@@ -73,10 +73,10 @@ export class GameScene extends Phaser.Scene {
 
 
         this.physics.add.collider(this.player, this.boxes, this.playerHitBox, null, this);
-        // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
-        // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
         this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
         this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
+        // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
+        // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
 
 
     }
