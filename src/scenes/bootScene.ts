@@ -9,9 +9,7 @@ export class BootScene extends Phaser.Scene {
     private progressBar: Phaser.GameObjects.Graphics;
 
     constructor() {
-        super({
-            key: "BootScene"
-        });
+        super({key: "BootScene"});
     }
 
     preload(): void {

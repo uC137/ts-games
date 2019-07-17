@@ -56,6 +56,8 @@ export class Tate extends Phaser.GameObjects.Sprite {
             this.handleInput();
             this.handleAnimations();
         } else {
+            this.currentScene.sound.stopAll();
+            this.currentScene.sound.play('die');
             this.setFrame(12);
             if (this.y > this.currentScene.sys.canvas.height) {
                 this.currentScene.scene.stop("GameScene");

@@ -78,7 +78,7 @@ export class GameScene extends Phaser.Scene {
         // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
         // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
 
-
+        this.sound.play('snip');
     }
 
 
@@ -193,6 +193,7 @@ export class GameScene extends Phaser.Scene {
         switch (_collectible.texture.key) {
             case "plant":
             case "mushroom": {
+                this.sound.play('up');
                 _player.growTate();
                 break;
             }

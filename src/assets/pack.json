@@ -28,6 +28,21 @@
         "url": "src/assets/tiles/tiles.png"
       },
       {
+        "type": "audio",
+        "key": "snip",
+        "url": "src/assets/sounds/8bitSnip.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "die",
+        "url": "src/assets/sounds/tatedie.wav"
+      },
+      {
+        "type": "audio",
+        "key": "up",
+        "url": "src/assets/sounds/1up.wav"
+      },
+      {
         "type": "json",
         "key": "animationJSON",
         "url": "src/assets/animations/animations.json"
