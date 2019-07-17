@@ -169,7 +169,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
     }
 
 
-    growTate(){
+    growTate() {
         this.tateSize = "big";
         this.currentScene.registry.set('tateSize', this.tateSize);
         this.adjustPhysicBodyToBigSize();
@@ -202,5 +202,9 @@ export class Tate extends Phaser.GameObjects.Sprite {
             this.body.checkCollision.left = false;
             this.body.checkCollision.right = false;
         }
+    }
+
+    bounceUpAfterHitEnemyOnHead(): void {
+        this.currentScene.add.tween({targets: this, props: {y: this.y - 5}, duration: 200, ease: "Power1", yoyo: true});
     }
 }

@@ -10,7 +10,7 @@ import {Enemy} from "./enemy";
 export class Goomba extends Enemy {
     constructor(params) {
         super(params);
-        this.speed = -55;
+        this.speed = -65;
         this.dyingScoreValue = 100;
     }
 
@@ -18,7 +18,7 @@ export class Goomba extends Enemy {
     protected gotHitOnHead(): void {
         this.isDying = true;
         this.setFrame(2);
-        //this.showAndAddScore();
+        this.showAndAddScore();
     }
 
     protected isDead(): void {

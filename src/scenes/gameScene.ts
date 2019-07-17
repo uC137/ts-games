@@ -208,19 +208,20 @@ export class GameScene extends Phaser.Scene {
     private handlePlayerEnemyOverlap(_player: Tate, _enemy) {
         if (_player.body.touching.down && _enemy.body.touching.up) {
             // player hit enemy on top
-
+            _player.bounceUpAfterHitEnemyOnHead();
+            _enemy.gotHitOnHead();
             this.add.tween({
                 targets: _enemy,
-                props: { alpha: 0 },
+                props: {alpha: 0},
                 duration: 1000,
                 ease: "Power0",
                 yoyo: false,
-                onComplete: function() {
+                onComplete: function () {
                     _enemy.isDead();
                 }
             });
 
-        }else{
+        } else {
             // player got hit from the side or on the head
             if (_player.isVulnerable) {
                 _player.gotHit();
