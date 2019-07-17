@@ -93,7 +93,7 @@ export class GameScene extends Phaser.Scene {
     private playerHitBox(_player: Tate, _box: Box): void {
         if (_box.body.touching.down && _box.active) {
             // ok, mario has really hit a box on the downside
-            _box.yoyoTheBoxUpAndDown();
+            _box.yoyoTheBoxUpAndDown();//animation
             this.collectibles.add(_box.spawnBoxContent());
 
             switch (_box.boxContent) {
@@ -103,7 +103,7 @@ export class GameScene extends Phaser.Scene {
                         _box.getContent().destroy();
                     });
 
-                    //_box.addCoinAndScore(1, 100);
+                    _box.addCoinAndScore(1, 100);
                     break;
                 }
                 case "rotatingCoin": {
@@ -111,7 +111,7 @@ export class GameScene extends Phaser.Scene {
                         _box.getContent().destroy();
                     });
 
-                    //_box.addCoinAndScore(1, 100);
+                    _box.addCoinAndScore(1, 100);
                     break;
                 }
                 case "flower": {

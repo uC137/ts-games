@@ -67,6 +67,13 @@ export class Box extends Phaser.GameObjects.Sprite {
         return this.content;
     }
 
+    addCoinAndScore(coin: number, score: number): void {
+        this.currentScene.registry.values.coins += coin;
+        this.currentScene.events.emit("coinsChanged");
+        this.currentScene.registry.values.score += score;
+        this.currentScene.events.emit("scoreChanged");
+    }
+
     update(): void {
     }
 
