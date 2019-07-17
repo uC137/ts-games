@@ -156,4 +156,27 @@ export class Tate extends Phaser.GameObjects.Sprite {
             }
         }
     }
+
+    shrinkMario(): void {
+        this.tateSize = "small";
+        this.currentScene.registry.set("marioSize", this.tateSize);
+        this.adjustPhysicBodyToSmallSize();
+    }
+
+    private adjustPhysicBodyToSmallSize(): void {
+        this.body.setSize(6, 12);
+        this.body.setOffset(6, 4);
+    }
+
+
+    growTate(){
+        this.tateSize = "big";
+        this.currentScene.registry.set('tateSize', this.tateSize);
+        this.adjustPhysicBodyToBigSize();
+    }
+
+    private adjustPhysicBodyToBigSize(): void {
+        this.body.setSize(8, 16);
+        this.body.setOffset(4, 0);
+    }
 }

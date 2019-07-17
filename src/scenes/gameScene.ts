@@ -75,7 +75,7 @@ export class GameScene extends Phaser.Scene {
         // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
         // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
         // this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
-        // this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
+        this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
 
 
     }
@@ -188,4 +188,19 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
+    private handlePlayerCollectiblesOverlap(_player: Tate, _collectible): void {
+        switch (_collectible.texture.key) {
+            case "plant":
+            case "mushroom": {
+                _player.growTate();
+                break;
+            }
+            case "flower":
+            case "star":
+            default: {
+                break;
+            }
+        }
+        _collectible.collected();
+    }
 }
