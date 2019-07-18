@@ -75,11 +75,11 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.player, this.boxes, this.playerHitBox, null, this);
         this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
         this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
-        // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
-        // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
+        this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
+        this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
 
         this.sound.play('lets_go');
-        this.sound.play('bmusic',{volume:0.5});
+        this.sound.play('bmusic', {volume: 0.5});
     }
 
 
@@ -162,9 +162,6 @@ export class GameScene extends Phaser.Scene {
                 this.player = new Tate({scene: this, x: this.registry.get("spawn").x, y: this.registry.get("spawn").y, key: "tate"});
             }
 
-            // if (object.type === "plant") {
-            //     this.plant.add(new Plant({scene: this, x: object.x, y: object.y, key: "plant"}));
-            // }
             if (object.type === "box") {
                 this.boxes.add(new Box({scene: this, x: object.x, y: object.y, key: "box", content: object.properties[0].value}));
             }
@@ -230,5 +227,32 @@ export class GameScene extends Phaser.Scene {
             }
         }
 
+    }
+
+    private handlePlayerOnPlatform(player, platform): void {
+        if (platform.body.moves && platform.body.touching.up && player.body.touching.down) {
+            // TODO: //
+        }
+    }
+
+    private handlePlayerPortalOverlap(_player: Tate, _portal): void {
+        if ((_player.keys.get("DOWN").isDown && _portal.getPortalDestination().dir === "down")
+            ||
+            (_player.keys.get("RIGHT").isDown && _portal.getPortalDestination().dir === "right")) {
+            // set new level and new destination for mario
+            this.registry.set("level", _portal.name);
+            this.registry.set("spawn", {
+                x: _portal.getPortalDestination().x,
+                y: _portal.getPortalDestination().y,
+                dir: _portal.getPortalDestination().dir
+            });
+
+            // restart the game scene
+            this.scene.restart();
+        } else if (_portal.name === "exit") {
+            this.scene.stop("GameScene");
+            this.scene.stop("HUDScene");
+            this.scene.start("MenuScene");
+        }
     }
 }

@@ -1,17 +1,17 @@
 export class Tate extends Phaser.GameObjects.Sprite {
     // variables
-    public currentScene: Phaser.Scene;
-    public tateSize: string;
-    public acceleration: number;
-    public isJumping: boolean;
-    public isDying: boolean;
-    public isVulnerable: boolean;
-    public vulnerableCounter: number;
+    currentScene: Phaser.Scene;
+    tateSize: string;
+    acceleration: number;
+    isJumping: boolean;
+    isDying: boolean;
+    isVulnerable: boolean;
+    vulnerableCounter: number;
 
     // input
-    private keys: Map<string, Phaser.Input.Keyboard.Key>;
+    keys: Map<string, Phaser.Input.Keyboard.Key>;
 
-    public getKeys(): Map<string, Phaser.Input.Keyboard.Key> {
+    getKeys(): Map<string, Phaser.Input.Keyboard.Key> {
         return this.keys;
     }
 
