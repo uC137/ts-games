@@ -162,7 +162,6 @@ export class GameScene extends Phaser.Scene {
             }
 
             if (object.type === "collectible") {
-                console.log(object.properties);
                 this.collectibles.add(new Collectible({
                     scene: this,
                     x: object.x,
@@ -243,6 +242,7 @@ export class GameScene extends Phaser.Scene {
             // restart the game scene
             this.scene.restart();
         } else if (_portal.name === "exit") {
+            this.sound.stopAll();
             this.scene.stop("GameScene");
             this.scene.stop("HUDScene");
             this.scene.start("MenuScene");
