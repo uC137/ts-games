@@ -4,60 +4,194 @@
       {
         "type": "bitmapFont",
         "key": "font",
-        "textureURL": "assets/font/font.png",
-        "fontDataURL": "assets/font/font.fnt"
+        "textureURL": "/assets/font/superMarioLand.png",
+        "fontDataURL": "/assets/font/superMarioLand.fnt"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level1",
+        "url": "/assets/maps/level1.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level1Room1",
+        "url": "/assets/maps/level1room1.json"
+      },
+      {
+        "type": "tilemapTiledJSON",
+        "key": "level1Room2",
+        "url": "/assets/maps/level1room2.json"
+      },
+      {
+        "type": "image",
+        "key": "tiles",
+        "url": "/assets/tiles/tiles.png"
+      },
+      {
+        "type": "audio",
+        "key": "bmusic",
+        "url": "/assets/sounds/bMusic.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "die",
+        "url": "/assets/sounds/tatedie.wav"
+      },
+      {
+        "type": "audio",
+        "key": "up",
+        "url": "/assets/sounds/1up.wav"
+      },
+      {
+        "type": "audio",
+        "key": "coin",
+        "url": "/assets/sounds/coin.wav"
+      },
+      {
+        "type": "audio",
+        "key": "jump",
+        "url": "/assets/sounds/jump.wav"
       },
       {
         "type": "audio",
         "key": "mh",
-        "url": "assets/sounds/mh.mp3"
+        "url": "/assets/sounds/mh.mp3"
       },
       {
         "type": "audio",
-        "key": "dead1",
-        "url": "assets/sounds/dead1.mp3"
+        "key": "lets_go",
+        "url": "/assets/sounds/lets_go.wav"
       },
       {
-        "type": "audio",
-        "key": "dead2",
-        "url": "assets/sounds/dead2.mp3"
-      },
-      {
-        "type": "image",
-        "key": "background",
-        "url": "assets/images/bg.png"
-      },
-      {
-        "type": "image",
-        "key": "background1",
-        "url": "assets/images/bg1.png"
-      },
-      {
-        "type": "image",
-        "key": "bird",
-        "url": "assets/images/bird.png"
-      },
-      {
-        "type": "image",
-        "key": "uch",
-        "url": "assets/images/uch.png"
+        "type": "json",
+        "key": "animationJSON",
+        "url": "/assets/animations/animations.json"
       },
       {
         "type": "spritesheet",
-        "key": "uchA",
-        "url": "assets/sprites/uchA.png",
+        "key": "mario",
+        "url": "/assets/sprites/mario.png",
         "frameConfig": {
-          "frameWidth": 41,
-          "frameHeight": 53
+          "frameWidth": 16,
+          "frameHeight": 16
         }
       },
       {
         "type": "spritesheet",
-        "key": "pipe",
-        "url": "assets/sprites/pipe1.png",
+        "key": "tate",
+        "url": "/assets/sprites/tate.png",
         "frameConfig": {
-          "frameWidth": 20,
-          "frameHeight": 20
+          "frameWidth": 16,
+          "frameHeight": 16
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "box",
+        "url": "/assets/sprites/box.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "brick",
+        "url": "/assets/sprites/brick.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "rotatingCoin",
+        "url": "/assets/sprites/rotatingCoin.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "coin",
+        "url": "/assets/sprites/coin.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "goomba",
+        "url": "/assets/sprites/goomba.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "image",
+        "key": "platform",
+        "url": "/assets/images/platform.png"
+      },
+      {
+        "type": "image",
+        "key": "title",
+        "url": "/assets/images/title1.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "coin2",
+        "url": "/assets/collectibles/coin2.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "flower",
+        "url": "/assets/collectibles/flower.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "heart",
+        "url": "/assets/collectibles/heart.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "mushroom",
+        "url": "/assets/collectibles/mushroom.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "plant",
+        "url": "/assets/collectibles/plant.png",
+        "frameConfig": {
+          "frameWidth": 11,
+          "frameHeight": 10
+        }
+      },
+      {
+        "type": "spritesheet",
+        "key": "star",
+        "url": "/assets/collectibles/star.png",
+        "frameConfig": {
+          "frameWidth": 8,
+          "frameHeight": 8
         }
       }
     ]
