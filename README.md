@@ -1,4 +1,6 @@
-## Developing games on Typescript
+## Developing games on Typescript and Phaser
+
+[Demo](https://uc137.github.io/ts-games/)
 
 ### Installing
 
