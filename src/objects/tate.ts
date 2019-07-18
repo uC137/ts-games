@@ -111,6 +111,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
 
         // handle jumping
         if (this.keys.get("JUMP").isDown && !this.isJumping) {
+            this.currentScene.sound.play('jump');
             this.body.setVelocityY(-180);
             this.isJumping = true;
         }
@@ -163,6 +164,7 @@ export class Tate extends Phaser.GameObjects.Sprite {
         this.tateSize = "small";
         this.currentScene.registry.set("tateSize", this.tateSize);
         this.adjustPhysicBodyToSmallSize();
+        this.currentScene.sound.play('mh');
     }
 
     private adjustPhysicBodyToSmallSize(): void {

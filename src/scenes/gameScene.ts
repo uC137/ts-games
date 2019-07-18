@@ -78,7 +78,8 @@ export class GameScene extends Phaser.Scene {
         // this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
         // this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
 
-        this.sound.play('snip');
+        this.sound.play('lets_go');
+        this.sound.play('bmusic',{volume:0.5});
     }
 
 

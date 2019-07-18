@@ -29,8 +29,8 @@
       },
       {
         "type": "audio",
-        "key": "snip",
-        "url": "src/assets/sounds/8bitSnip.mp3"
+        "key": "bmusic",
+        "url": "src/assets/sounds/bMusic.mp3"
       },
       {
         "type": "audio",
@@ -41,6 +41,26 @@
         "type": "audio",
         "key": "up",
         "url": "src/assets/sounds/1up.wav"
+      },
+      {
+        "type": "audio",
+        "key": "coin",
+        "url": "src/assets/sounds/coin.wav"
+      },
+      {
+        "type": "audio",
+        "key": "jump",
+        "url": "src/assets/sounds/jump.wav"
+      },
+      {
+        "type": "audio",
+        "key": "mh",
+        "url": "src/assets/sounds/mh.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "lets_go",
+        "url": "src/assets/sounds/lets_go.wav"
       },
       {
         "type": "json",

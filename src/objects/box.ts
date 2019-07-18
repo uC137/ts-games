@@ -64,6 +64,7 @@ export class Box extends Phaser.GameObjects.Sprite {
     }
 
     tweenBoxContent(props: {}, duration: number, complete: () => void): void {
+        this.scene.sound.play('coin');
         this.hitBoxTimeline.add({targets: this.content, props: props, delay: 0, duration: duration, ease: "Power0", onComplete: complete});
     }
 
