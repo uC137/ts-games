@@ -162,11 +162,12 @@ export class GameScene extends Phaser.Scene {
             }
 
             if (object.type === "collectible") {
+                console.log(object.properties);
                 this.collectibles.add(new Collectible({
                     scene: this,
                     x: object.x,
                     y: object.y,
-                    key: object.properties.kindOfCollectible,
+                    key: object.properties[0].value,
                     points: 100
                 }));
             }

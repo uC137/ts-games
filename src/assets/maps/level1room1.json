@@ -195,7 +195,7 @@
                         {
                          "name":"kindOfCollectible",
                          "type":"string",
-                         "value":"rotatingCoin"
+                         "value":"coin2"
                         }],
                  "rotation":0,
                  "type":"collectible",

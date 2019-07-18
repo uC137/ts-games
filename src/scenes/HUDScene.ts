@@ -42,6 +42,6 @@ export class HUDScene extends Phaser.Scene {
     }
 
     private updateScore() {
-        this.textElements.get("SCORE").setText(`${this.registry.get("score")}`).setX(40 - 8 * (this.registry.get("score").toString().length - 1));
+        this.textElements.get("SCORE").setText(`GEL ${this.registry.get("score")}`).setX(25 - 8 * (this.registry.get("score").toString().length - 1));
     }
 }
