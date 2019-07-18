@@ -1,11 +1,9 @@
 import {Box} from "../objects/box";
-// import {Plant} from "../objects/plant";
 import {Brick} from "../objects/brick";
 import {Collectible} from "../objects/collectible";
 import {Goomba} from "../objects/goomba";
 import {Portal} from "../objects/portal";
 import {Tate} from "../objects/tate";
-import {Enemy} from "../objects/enemy";
 
 export class GameScene extends Phaser.Scene {
     private backgroundLayer: Phaser.Tilemaps.StaticTilemapLayer;
@@ -20,7 +18,6 @@ export class GameScene extends Phaser.Scene {
     private enemies: Phaser.GameObjects.Group;
     private platforms: Phaser.GameObjects.Group;
     private portals: Phaser.GameObjects.Group;
-    // private plant: Phaser.GameObjects.Group;
     private player: Tate;
 
     constructor() {
@@ -50,7 +47,6 @@ export class GameScene extends Phaser.Scene {
         this.collectibles = this.add.group({runChildUpdate: true});
         this.enemies = this.add.group({runChildUpdate: true});
         this.platforms = this.add.group({runChildUpdate: true});
-        // this.plant = this.add.group({runChildUpdate: true});
 
 
         this.loadObjectsFromTilemap();
@@ -70,16 +66,11 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.enemies, this.boxes);
         this.physics.add.collider(this.enemies, this.bricks);
         this.physics.add.collider(this.player, this.bricks);
-
-
         this.physics.add.collider(this.player, this.boxes, this.playerHitBox, null, this);
         this.physics.add.overlap(this.player, this.enemies, this.handlePlayerEnemyOverlap, null, this);
         this.physics.add.overlap(this.player, this.collectibles, this.handlePlayerCollectiblesOverlap, null, this);
         this.physics.add.collider(this.player, this.platforms, this.handlePlayerOnPlatform, null, this);
         this.physics.add.overlap(this.player, this.portals, this.handlePlayerPortalOverlap, null, this);
-
-        this.sound.play('lets_go');
-        this.sound.play('bmusic', {volume: 0.5});
     }
 
 
@@ -146,13 +137,14 @@ export class GameScene extends Phaser.Scene {
 
 
             if (object.type === "portal") {
+                let arr = object.properties.map(item => item.value);
                 this.portals.add(
                     new Portal({
                         scene: this, x: object.x, y: object.y, height: object.width, width: object.height,
                         spawn: {
-                            x: object.properties.marioSpawnX,
-                            y: object.properties.marioSpawnY,
-                            dir: object.properties.direction
+                            x: arr[1],
+                            y: arr[2],
+                            dir: arr[0]
                         }
                     }).setName(object.name)
                 );

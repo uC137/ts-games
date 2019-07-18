@@ -24,6 +24,9 @@ export class HUDScene extends Phaser.Scene {
         level.events.on("livesChanged", this.updateLives, this);
         level.events.on("scoreChanged", this.updateScore, this);
 
+        //Initiate Sounds
+        this.sound.play('lets_go');
+        this.sound.play('bmusic', {volume: 0.5});
     }
 
     private addText(x: number, y: number, value: string): Phaser.GameObjects.BitmapText {

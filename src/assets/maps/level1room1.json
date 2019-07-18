@@ -3,6 +3,7 @@
  "layers":[
         {
          "draworder":"topdown",
+         "id":1,
          "name":"objects",
          "objects":[
                 {
@@ -20,14 +21,12 @@
                  "height":8,
                  "id":291,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -39,14 +38,12 @@
                  "height":8,
                  "id":292,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -58,14 +55,12 @@
                  "height":8,
                  "id":293,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -77,14 +72,12 @@
                  "height":8,
                  "id":294,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -96,14 +89,12 @@
                  "height":8,
                  "id":295,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -115,14 +106,12 @@
                  "height":8,
                  "id":296,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -134,14 +123,12 @@
                  "height":8,
                  "id":297,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -153,14 +140,12 @@
                  "height":8,
                  "id":298,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -172,14 +157,12 @@
                  "height":8,
                  "id":299,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -191,14 +174,12 @@
                  "height":8,
                  "id":300,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -210,14 +191,12 @@
                  "height":8,
                  "id":301,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"rotatingCoin"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -229,14 +208,12 @@
                  "height":8,
                  "id":302,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -248,14 +225,12 @@
                  "height":8,
                  "id":303,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -267,14 +242,12 @@
                  "height":8,
                  "id":304,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -286,14 +259,12 @@
                  "height":8,
                  "id":305,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -305,14 +276,12 @@
                  "height":8,
                  "id":311,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -324,14 +293,12 @@
                  "height":8,
                  "id":312,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -343,14 +310,12 @@
                  "height":8,
                  "id":313,
                  "name":"collectible",
-                 "properties":
-                    {
-                     "kindOfCollectible":"coin2"
-                    },
-                 "propertytypes":
-                    {
-                     "kindOfCollectible":"string"
-                    },
+                 "properties":[
+                        {
+                         "name":"kindOfCollectible",
+                         "type":"string",
+                         "value":"coin2"
+                        }],
                  "rotation":0,
                  "type":"collectible",
                  "visible":true,
@@ -362,18 +327,22 @@
                  "height":16,
                  "id":314,
                  "name":"level1",
-                 "properties":
-                    {
-                     "direction":"right",
-                     "marioSpawnX":332,
-                     "marioSpawnY":98
-                    },
-                 "propertytypes":
-                    {
-                     "direction":"string",
-                     "marioSpawnX":"int",
-                     "marioSpawnY":"int"
-                    },
+                 "properties":[
+                        {
+                         "name":"direction",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"marioSpawnX",
+                         "type":"int",
+                         "value":332
+                        }, 
+                        {
+                         "name":"marioSpawnY",
+                         "type":"int",
+                         "value":98
+                        }],
                  "rotation":0,
                  "type":"portal",
                  "visible":true,
@@ -391,6 +360,7 @@
          "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAAAAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAAAAAAAAAAAAAAAAAAEcAAABIAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARwAAAEgAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHAAAASAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEcAAABIAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARwAAAEgAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHAAAASAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEcAAABIAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARwAAAEgAAAAZAAAAAAAAAAAAAAAAAAAACQAAAAkAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHAAAASAAAABkAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAkAAAAJAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEcAAABIAAAAGQAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARwAAAEgAAAAZAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHAAAASAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAAAAAAAAAAAAAAAAA5AAAAOgAAAD0AAABIAAAAGQAAAAkAAAAAAAAAAAAAAAAAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAAAAAAAAAAAAAAAAAAEkAAABKAAAATQAAAEgAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAAGQAAABkAAAAZAAAA",
          "encoding":"base64",
          "height":18,
+         "id":2,
          "name":"foregroundLayer",
          "opacity":1,
          "type":"tilelayer",
@@ -403,6 +373,7 @@
          "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
          "encoding":"base64",
          "height":18,
+         "id":3,
          "name":"backgroundLayer",
          "opacity":1,
          "type":"tilelayer",
@@ -411,10 +382,11 @@
          "x":0,
          "y":0
         }],
+ "nextlayerid":4,
  "nextobjectid":315,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.1.6",
+ "tiledversion":"1.2.4",
  "tileheight":8,
  "tilesets":[
         {
@@ -428,200 +400,218 @@
          "spacing":0,
          "tilecount":352,
          "tileheight":8,
-         "tileproperties":
-            {
-             "100":
+         "tiles":[
                 {
-                 "collide":true
-                },
-             "143":
+                 "id":16,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "16":
+                 "id":24,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "24":
+                 "id":32,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "32":
+                 "id":33,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "33":
+                 "id":54,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "54":
+                 "id":55,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "55":
+                 "id":56,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "56":
+                 "id":57,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "57":
+                 "id":58,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "58":
+                 "id":59,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "59":
+                 "id":60,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "60":
+                 "id":61,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "61":
+                 "id":70,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "70":
+                 "id":71,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "71":
+                 "id":72,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "72":
+                 "id":73,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "73":
+                 "id":74,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "74":
+                 "id":75,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "75":
+                 "id":76,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "76":
+                 "id":77,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "77":
+                 "id":84,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                },
-             "84":
+                 "id":100,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
                 {
-                 "collide":true
-                }
-            },
-         "tilepropertytypes":
-            {
-             "100":
-                {
-                 "collide":"bool"
-                },
-             "143":
-                {
-                 "collide":"bool"
-                },
-             "16":
-                {
-                 "collide":"bool"
-                },
-             "24":
-                {
-                 "collide":"bool"
-                },
-             "32":
-                {
-                 "collide":"bool"
-                },
-             "33":
-                {
-                 "collide":"bool"
-                },
-             "54":
-                {
-                 "collide":"bool"
-                },
-             "55":
-                {
-                 "collide":"bool"
-                },
-             "56":
-                {
-                 "collide":"bool"
-                },
-             "57":
-                {
-                 "collide":"bool"
-                },
-             "58":
-                {
-                 "collide":"bool"
-                },
-             "59":
-                {
-                 "collide":"bool"
-                },
-             "60":
-                {
-                 "collide":"bool"
-                },
-             "61":
-                {
-                 "collide":"bool"
-                },
-             "70":
-                {
-                 "collide":"bool"
-                },
-             "71":
-                {
-                 "collide":"bool"
-                },
-             "72":
-                {
-                 "collide":"bool"
-                },
-             "73":
-                {
-                 "collide":"bool"
-                },
-             "74":
-                {
-                 "collide":"bool"
-                },
-             "75":
-                {
-                 "collide":"bool"
-                },
-             "76":
-                {
-                 "collide":"bool"
-                },
-             "77":
-                {
-                 "collide":"bool"
-                },
-             "84":
-                {
-                 "collide":"bool"
-                }
-            },
+                 "id":143,
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
          "tilewidth":8
         }],
  "tilewidth":8,
  "type":"map",
- "version":1,
+ "version":1.2,
  "width":20
 }
