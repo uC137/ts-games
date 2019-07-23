@@ -3,8 +3,8 @@
     "files": [
       {
         "type": "tilemapTiledJSON",
-        "key": "levelMap",
-        "url": "src/assets/maps/levelMap.json"
+        "key": "map",
+        "url": "src/assets/maps/map.json"
       },
       {
         "type": "bitmapFont",
