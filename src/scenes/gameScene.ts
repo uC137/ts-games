@@ -5,6 +5,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     init(): void {
+        console.log("game Scene");
     }
 
     create(): void{
