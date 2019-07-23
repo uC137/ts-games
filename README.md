@@ -2,6 +2,9 @@
 
 [Demo](https://uc137.github.io/ts-games/)
 
+## Screenshot
+![](ScreenShot.png=300x250)
+
 ### Installing
 
 Install the dependencies with this command-line:
@@ -19,21 +22,3 @@ Perform a quick build (bundle.js) and start server:
 npm run dev
 ```
 > If you use yarn just replace `npm` with `yarn`
-
-## Screen Shot
-![](ScreenShot.png)
-
-
-## TypeScript Configuration
-
-### tsconfig.json
-
-The following `Compiler Options` have been set in the `tsconfig.json` file:
-
-| Option | Value     |
-| :------------- | :------------- |
-| target       | ES2016 |
-| module       | CommonJS |
-| sourceMap    | true |
-| noImplicitAny| true [WIP] |
-| strict       | true [WIP] |
