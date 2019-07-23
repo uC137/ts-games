@@ -3,7 +3,7 @@
 [Demo](https://uc137.github.io/ts-games/)
 
 ## Screenshot
-![](ScreenShot.png=300x250)
+<img src="ScreenShot.png" width="300"/>
 
 ### Installing
 
