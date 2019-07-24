@@ -1,6 +1,7 @@
 import {Player} from "../objects/player";
 import {Enemy} from "../objects/enemy";
 import {Obstacle} from "../objects/obstacle";
+import {Bullet} from "../objects/bullet";
 
 export class GameScene extends Phaser.Scene {
     private map: Phaser.Tilemaps.Tilemap;
@@ -35,41 +36,21 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.player, this.obstacles);
 
 
-        this.cameras.main.startFollow(this.player);
-        this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+        // collider for bullets
+        this.physics.add.collider(this.player.getBullets(), this.layer, this.bulletHitLayer, null, this);
+        this.physics.add.collider(this.player.getBullets(), this.obstacles, this.bulletHitObstacles, null, this);
 
-
+        // collider for enemy tanks on layer
         this.enemies.children.each((enemy: Enemy) => {
-
-            //
-            // this.physics.add.overlap(
-            //     this.player.getBullets(),
-            //     enemy,
-            //     this.playerBulletHitEnemy,
-            //     null,
-            //     this
-            // );
-            // this.physics.add.overlap(
-            //     enemy.getBullets(),
-            //     this.player,
-            //     this.enemyBulletHitPlayer,
-            //     null
-            // );
-            //
-            // this.physics.add.collider(
-            //     enemy.getBullets(),
-            //     this.obstacles,
-            //     this.bulletHitObstacles,
-            //     null
-            // );
-            // this.physics.add.collider(
-            //     enemy.getBullets(),
-            //     this.layer,
-            //     this.bulletHitLayer,
-            //     null
-            // );
+            this.physics.add.overlap(this.player.getBullets(), enemy, this.playerBulletHitEnemy, null);
+            this.physics.add.overlap(enemy.getBullets(), this.player, this.enemyBulletHitPlayer, null);
+            this.physics.add.collider(enemy.getBullets(), this.obstacles, this.bulletHitObstacles, null);
+            this.physics.add.collider(enemy.getBullets(), this.layer, this.bulletHitLayer, null);
         }, this);
 
+
+        this.cameras.main.startFollow(this.player);
+        this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
 
     }
 
@@ -83,7 +64,7 @@ export class GameScene extends Phaser.Scene {
             if (this.player.active && enemy.active) {
                 let angle = Phaser.Math.Angle.Between(enemy.body.x, enemy.body.y, this.player.body.x, this.player.body.y);
                 let distance = Phaser.Math.Distance.Between(enemy.body.x, enemy.body.y, this.player.body.x, this.player.body.y);
-                if (distance < 500) {
+                if (distance < 700) {
                     enemy.getBarbell().angle = (angle + Math.PI / 2) * Phaser.Math.RAD_TO_DEG
                 }
             }
@@ -110,20 +91,20 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
-    private bulletHitLayer(bullet): void {
+    private bulletHitLayer(bullet: Bullet): void {
         bullet.destroy();
     }
 
-    private bulletHitObstacles(bullet, obstacle): void {
+    private bulletHitObstacles(bullet: Bullet): void {
         bullet.destroy();
     }
 
-    private playerBulletHitEnemy(bullet, enemy): void {
+    private playerBulletHitEnemy(bullet: Bullet, enemy: Enemy): void {
         bullet.destroy();
         enemy.updateHealth();
     }
 
-    private enemyBulletHitPlayer(bullet, player): void {
+    private enemyBulletHitPlayer(bullet: Bullet, player: Player): void {
         bullet.destroy();
         player.updateHealth();
     }

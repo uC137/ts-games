@@ -1,3 +1,5 @@
+import {Bullet} from "./bullet";
+
 export class Player extends Phaser.GameObjects.Image {
     private lastShoot: number;
     private health: number;
@@ -61,6 +63,7 @@ export class Player extends Phaser.GameObjects.Image {
             this.lifeBar.y = this.y;
 
             this.handleInput();
+            this.handelShoot();
 
 
         } else {
@@ -72,6 +75,31 @@ export class Player extends Phaser.GameObjects.Image {
 
     }
 
+
+    private handelShoot() {
+        if (this.shootingKey.isDown && this.scene.time.now > this.lastShoot) {
+            this.scene.cameras.main.shake(20, 0.005);
+            this.scene.tweens.add({
+                targets: this,
+                props: {alpha: 0.8},
+                delay: 0,
+                duration: 5,
+                ease: "Power1",
+                easeParams: null,
+                hold: 0,
+                repeat: 0,
+                repeatDelay: 0,
+                yoyo: true,
+                paused: false
+            });
+
+            if (this.bullets.getLength() < 10) {
+                this.bullets.add(new Bullet({scene: this.scene,x: this.barrel.x,y: this.barrel.y,key: "bulletBlue",rotation: this.barrel.rotation}));
+                this.lastShoot = this.scene.time.now + 80;
+            }
+
+        }
+    }
 
     private handleInput() {
         // move tank forward
