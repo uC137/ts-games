@@ -186,18 +186,6 @@
                  "y":2213
                 }, 
                 {
-                 "gid":12,
-                 "height":62,
-                 "id":27,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":44,
-                 "x":2408,
-                 "y":1273
-                }, 
-                {
                  "gid":13,
                  "height":48,
                  "id":28,
@@ -268,18 +256,6 @@
                  "width":44,
                  "x":818,
                  "y":553
-                }, 
-                {
-                 "gid":12,
-                 "height":62,
-                 "id":35,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":44,
-                 "x":1854,
-                 "y":629
                 }, 
                 {
                  "gid":14,
@@ -429,6 +405,38 @@
          "spacing":0,
          "tilecount":8,
          "tileheight":80,
+         "tiles":[
+                {
+                 "id":3,
+                 "objectgroup":
+                    {
+                     "draworder":"index",
+                     "name":"",
+                     "objects":[
+                            {
+                             "height":76,
+                             "id":2,
+                             "name":"",
+                             "rotation":0,
+                             "type":"",
+                             "visible":true,
+                             "width":77,
+                             "x":2,
+                             "y":2
+                            }],
+                     "opacity":1,
+                     "type":"objectgroup",
+                     "visible":true,
+                     "x":0,
+                     "y":0
+                    },
+                 "properties":[
+                        {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
          "tilewidth":80
         }, 
         {

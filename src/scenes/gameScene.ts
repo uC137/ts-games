@@ -35,10 +35,14 @@ export class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.player, this.obstacles);
 
 
+        this.cameras.main.startFollow(this.player);
     }
 
 
-    update(): void {}
+    update(): void {
+        this.player.update();
+
+    }
 
 
     private initObjects(): void {
@@ -56,8 +60,6 @@ export class GameScene extends Phaser.Scene {
             }
         });
     }
-
-
 
 
 }
