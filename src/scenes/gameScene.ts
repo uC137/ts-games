@@ -43,6 +43,17 @@ export class GameScene extends Phaser.Scene {
     update(): void {
         this.player.update();
 
+        this.enemies.children.each((enemy: Enemy)=>{
+            enemy.update();
+
+            if (this.player.active && enemy.active){
+                var angle = Phaser.Math.Angle.Between(enemy.body.x,enemy.body.y,this.player.body.x,this.player.body.y);
+                enemy.getBarbell().angle = (angle + Math.PI /2 ) * Phaser.Math.RAD_TO_DEG
+            }
+
+
+        })
+
     }
 
 
