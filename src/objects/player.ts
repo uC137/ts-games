@@ -60,7 +60,6 @@ export class Player extends Phaser.GameObjects.Image {
             this.lifeBar.x = this.x;
             this.lifeBar.y = this.y;
 
-
             this.handleInput();
 
 
@@ -108,6 +107,22 @@ export class Player extends Phaser.GameObjects.Image {
     }
 
     private redrawLifebar() {
+        this.lifeBar.clear();
+        this.lifeBar.fillStyle(0xe66a28, 1);
+        this.lifeBar.fillRect(-this.width / 2, -this.height / 2 - 25, this.width * this.health, 15)
+        this.lifeBar.lineStyle(2, 0xffffff);
+        this.lifeBar.strokeRect(-this.width / 2, -this.height / 2 - 25, this.width, 15);
+        this.lifeBar.setDepth(1);
+    }
 
+    public updateHealth(): void {
+        if (this.health > 0) {
+            this.health -= 0.05;
+            this.redrawLifebar();
+        } else {
+            this.health = 0;
+            this.active = false;
+            this.scene.scene.start("MenuScene");
+        }
     }
 }

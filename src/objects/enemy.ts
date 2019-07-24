@@ -12,7 +12,7 @@ export class Enemy extends Phaser.GameObjects.Image {
         this.scene.add.existing(this);
     }
 
-    getBarbell(){
+    getBarbell() {
         return this.barrel;
     }
 
@@ -52,16 +52,28 @@ export class Enemy extends Phaser.GameObjects.Image {
         }
     }
 
-    private redrawLifebar() {
-
-    }
 
     private handleShooting() {
 
     }
 
-    public updateHealth(): void {
+    private redrawLifebar(): void {
+        this.lifeBar.clear();
+        this.lifeBar.fillStyle(0xe66a28, 1);
+        this.lifeBar.fillRect(-this.width / 2, this.height / 2, this.width * this.health, 15);
+        this.lifeBar.lineStyle(2, 0xffffff);
+        this.lifeBar.strokeRect(-this.width / 2, this.height / 2, this.width, 15);
+        this.lifeBar.setDepth(1);
+    }
 
+    public updateHealth(): void {
+        if (this.health > 0) {
+            this.health -= 0.05;
+            this.redrawLifebar();
+        } else {
+            this.health = 0;
+            this.active = false;
+        }
     }
 }
 

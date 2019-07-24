@@ -37,18 +37,55 @@ export class GameScene extends Phaser.Scene {
 
         this.cameras.main.startFollow(this.player);
         this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+
+
+        this.enemies.children.each((enemy: Enemy) => {
+
+            //
+            // this.physics.add.overlap(
+            //     this.player.getBullets(),
+            //     enemy,
+            //     this.playerBulletHitEnemy,
+            //     null,
+            //     this
+            // );
+            // this.physics.add.overlap(
+            //     enemy.getBullets(),
+            //     this.player,
+            //     this.enemyBulletHitPlayer,
+            //     null
+            // );
+            //
+            // this.physics.add.collider(
+            //     enemy.getBullets(),
+            //     this.obstacles,
+            //     this.bulletHitObstacles,
+            //     null
+            // );
+            // this.physics.add.collider(
+            //     enemy.getBullets(),
+            //     this.layer,
+            //     this.bulletHitLayer,
+            //     null
+            // );
+        }, this);
+
+
     }
 
 
     update(): void {
         this.player.update();
 
-        this.enemies.children.each((enemy: Enemy)=>{
+        this.enemies.children.each((enemy: Enemy) => {
             enemy.update();
 
-            if (this.player.active && enemy.active){
-                var angle = Phaser.Math.Angle.Between(enemy.body.x,enemy.body.y,this.player.body.x,this.player.body.y);
-                enemy.getBarbell().angle = (angle + Math.PI /2 ) * Phaser.Math.RAD_TO_DEG
+            if (this.player.active && enemy.active) {
+                let angle = Phaser.Math.Angle.Between(enemy.body.x, enemy.body.y, this.player.body.x, this.player.body.y);
+                let distance = Phaser.Math.Distance.Between(enemy.body.x, enemy.body.y, this.player.body.x, this.player.body.y);
+                if (distance < 500) {
+                    enemy.getBarbell().angle = (angle + Math.PI / 2) * Phaser.Math.RAD_TO_DEG
+                }
             }
 
 
@@ -73,5 +110,22 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
+    private bulletHitLayer(bullet): void {
+        bullet.destroy();
+    }
+
+    private bulletHitObstacles(bullet, obstacle): void {
+        bullet.destroy();
+    }
+
+    private playerBulletHitEnemy(bullet, enemy): void {
+        bullet.destroy();
+        enemy.updateHealth();
+    }
+
+    private enemyBulletHitPlayer(bullet, player): void {
+        bullet.destroy();
+        player.updateHealth();
+    }
 
 }
