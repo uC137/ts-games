@@ -10,9 +10,11 @@ export class Player extends Phaser.GameObjects.Image {
 
     //input
     private cursors: Phaser.Input.Keyboard.CursorKeys;
-    private rotateKeyLeft: Phaser.Input.Keyboard.Key;
-    private rotateKeyRight: Phaser.Input.Keyboard.Key;
     private shootingKey: Phaser.Input.Keyboard.Key;
+    private keyLeft: Phaser.Input.Keyboard.Key;
+    private keyRight: Phaser.Input.Keyboard.Key;
+    private keyUp: Phaser.Input.Keyboard.Key;
+    private keyDown: Phaser.Input.Keyboard.Key;
 
     constructor(params) {
         super(params.scene, params.x, params.y, params.key, params.frame);
@@ -46,8 +48,10 @@ export class Player extends Phaser.GameObjects.Image {
 
         // input
         this.cursors = this.scene.input.keyboard.createCursorKeys();
-        this.rotateKeyLeft = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-        this.rotateKeyRight = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.keyLeft = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        this.keyRight = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.keyUp = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        this.keyDown = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.shootingKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
         // physics
@@ -104,26 +108,25 @@ export class Player extends Phaser.GameObjects.Image {
     private handleInput() {
         // move tank forward
         // small corrections with (- MATH.PI / 2) to align tank correctly
-        if (this.cursors.up.isDown) {
+        if (this.keyUp.isDown) {
             this.scene.physics.velocityFromRotation(this.rotation - Math.PI / 2, this.speed, this.body.velocity);
-        } else if (this.cursors.down.isDown) {
+        } else if (this.keyDown.isDown) {
             this.scene.physics.velocityFromRotation(this.rotation - Math.PI / 2, -this.speed, this.body.velocity);
         } else {
             this.body.setVelocity(0, 0,);
         }
 
         // rotate tank
-        if (this.cursors.left.isDown) {
+        if (this.keyLeft.isDown) {
             this.rotation -= 0.02;
-        } else if (this.cursors.right.isDown) {
+        } else if (this.keyRight.isDown) {
             this.rotation += 0.02;
         }
 
-
         // rotate barrel
-        if (this.rotateKeyLeft.isDown) {
+        if (this.cursors.left.isDown) {
             this.barrel.rotation -= 0.05;
-        } else if (this.rotateKeyRight.isDown) {
+        } else if (this.cursors.right.isDown) {
             this.barrel.rotation += 0.05;
         }
 

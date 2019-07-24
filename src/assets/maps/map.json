@@ -301,8 +301,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":72,
-                 "x":1928,
-                 "y":1852
+                 "x":1768,
+                 "y":1844
                 }, 
                 {
                  "height":68,
@@ -312,8 +312,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":74,
-                 "x":404,
-                 "y":2170
+                 "x":244,
+                 "y":2166
                 }, 
                 {
                  "height":70,
@@ -334,8 +334,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":70,
-                 "x":1130,
-                 "y":972
+                 "x":962,
+                 "y":964
                 }, 
                 {
                  "height":68,
@@ -345,8 +345,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":70,
-                 "x":1846,
-                 "y":484
+                 "x":1688,
+                 "y":402
                 }, 
                 {
                  "height":74,
@@ -356,8 +356,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":74,
-                 "x":1846,
-                 "y":808
+                 "x":1840,
+                 "y":964
                 }, 
                 {
                  "height":60,
@@ -367,8 +367,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":70,
-                 "x":2410,
-                 "y":2014
+                 "x":2244,
+                 "y":2004
                 }, 
                 {
                  "height":68,
@@ -378,8 +378,8 @@
                  "type":"enemy",
                  "visible":true,
                  "width":72,
-                 "x":2808,
-                 "y":1288
+                 "x":2562,
+                 "y":1286
                 }],
          "opacity":1,
          "type":"objectgroup",
