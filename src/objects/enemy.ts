@@ -45,7 +45,7 @@ export class Enemy extends Phaser.GameObjects.Image {
         // tweens
         this.scene.tweens.add({
             targets: this,
-            props: {y: this.y - 200},
+            props: {y: this.y - Phaser.Math.Between(200, 300)},
             delay: 0,
             duration: 2000,
             ease: "Linear",
