@@ -7,8 +7,8 @@ import {GameScene} from "./scenes/gameScene";
 const config: GameConfig = {
     title: "Adventurer",
     version: "1.0",
-    width: 300,
-    height: 250,
+    width: 770,
+    height: 550,
     zoom: 1,
     type: Phaser.AUTO,
     parent: "game",
