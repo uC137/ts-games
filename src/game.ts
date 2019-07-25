@@ -5,7 +5,7 @@ import {GameScene} from "./scenes/gameScene";
 
 // main game configuration
 const config: GameConfig = {
-    title: "Mario",
+    title: "Adventurer",
     version: "1.0",
     width: 300,
     height: 250,
