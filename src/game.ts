@@ -7,9 +7,9 @@ import {GameScene} from "./scenes/gameScene";
 const config: GameConfig = {
     title: "Mario",
     version: "1.0",
-    width: 160,
-    height: 144,
-    zoom: 5,
+    width: 300,
+    height: 250,
+    zoom: 1,
     type: Phaser.AUTO,
     parent: "game",
     scene: [BootScene, MainMenuScene, GameScene],
@@ -22,7 +22,7 @@ const config: GameConfig = {
     physics : {
         default: "arcade",
         arcade: {
-            gravity: { y: 475 },
+            gravity: { y: 500 },
             debug: false
         }
     },
