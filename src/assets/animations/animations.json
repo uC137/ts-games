@@ -5,11 +5,10 @@
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
         "key": "player",
-        "start": 9,
-        "end": 14
+        "frames" : [10,9,8,9]
       },
       "repeat": -1,
-      "frameRate": 12
+      "frameRate": 10
     },
     {
       "key": "PlayerIdle",
