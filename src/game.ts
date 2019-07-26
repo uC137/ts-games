@@ -9,9 +9,10 @@ const config: GameConfig = {
     title: "Adventurer",
     version: "1.0",
     width: 770,
-    height: 550,
-    zoom: 1,
+    height: 380,
+    zoom: 1.5,
     type: Phaser.AUTO,
+    backgroundColor: "#dcf5f3",
     parent: "game",
     scene: [BootScene, MainMenuScene, HudScene, GameScene],
     input: {

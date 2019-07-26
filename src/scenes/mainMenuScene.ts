@@ -24,8 +24,7 @@ export class MainMenuScene extends Phaser.Scene {
 
     update(): void {
         if (this.startKey.isDown) {
-            console.log("start");
-            //this.scene.start("GameScene");
+            this.scene.start("GameScene");
         }
     }
 

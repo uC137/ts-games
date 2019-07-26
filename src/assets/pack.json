@@ -4,23 +4,23 @@
       {
         "type": "bitmapFont",
         "key": "font",
-        "textureURL": "src/assets/font/font.png",
-        "fontDataURL": "src/assets/font/font.fnt"
+        "textureURL": "./src/assets/font/font.png",
+        "fontDataURL": "./src/assets/font/font.fnt"
       },
       {
         "type": "tilemapTiledJSON",
         "key": "level1",
-        "url": "src/assets/maps/level1.json"
+        "url": "./src/assets/maps/level1.json"
       },
       {
         "type": "image",
-        "key": "tiles",
-        "url": "src/assets/tiles/tileset.png"
+        "key": "tileset",
+        "url": "./src/assets/tiles/tileset.png"
       },
       {
         "type": "json",
         "key": "animationJSON",
-        "url": "src/assets/animations/animations.json"
+        "url": "./src/assets/animations/animations.json"
       },
       {
         "type": "spritesheet",

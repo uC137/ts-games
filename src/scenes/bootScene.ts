@@ -8,7 +8,6 @@ export class BootScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.cameras.main.setBackgroundColor(0x000000);
         this.createLoadingGraphics();
 
         // pass value to change the loading bar fill
