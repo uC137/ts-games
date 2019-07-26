@@ -10,6 +10,7 @@ export class MainMenuScene extends Phaser.Scene {
     init(): void {
         this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         this.startKey.isDown = false;
+        this.initGlobalData();
     }
 
     create(): void {
@@ -26,6 +27,18 @@ export class MainMenuScene extends Phaser.Scene {
             console.log("start");
             //this.scene.start("GameScene");
         }
+    }
+
+
+    private initGlobalData(): void {
+        this.registry.set("time", 500);
+        this.registry.set("level", "level1");
+        this.registry.set("world", "1-1");
+        this.registry.set("worldTime", "WORLD TIME");
+        this.registry.set("score", 0);
+        this.registry.set("lives", 2);
+        this.registry.set("liveBar", 100);
+        this.registry.set("spawn", { x: 12, y: 44, dir: "down" });
     }
 
 }
