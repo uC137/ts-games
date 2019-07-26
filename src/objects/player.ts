@@ -115,21 +115,23 @@ export class Player extends Phaser.GameObjects.Sprite {
         if (this.body.velocity.y !== 0) {
             // player is jumping or falling
             this.anims.stop();
+            this.anims.play("PlayerJumping", true);
         } else if (this.body.velocity.x !== 0) {
-            //console.log(this.body.velocity.x);
             // player is moving horizontal
-            this.setFrame(9);
-            this.anims.play("PlayerRun");
-            // check if player is making a quick direction change
-            // if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
-            //     this.anims.play("PlayerRun");
-            // }
+
+            // check if mario is making a quick direction change
+            if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
+                this.setFrame(9);
+                //this.anims.play("PlayerRun");
+            }
+            if (this.body.velocity.x > 0 || this.body.velocity.x < 0) {
+                this.anims.play("PlayerRun", true);
+            }
 
         } else {
-            // player is standing still
-            this.anims.play("PlayerIdle");
-            // this.anims.stop();
-            // this.setFrame(0);
+            // mario is standing still
+            this.anims.stop();
+            this.anims.play("PlayerIdle", true);
             if (this.keys.get("DOWN").isDown) {
                 this.setFrame(4);
             }

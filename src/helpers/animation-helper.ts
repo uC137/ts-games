@@ -66,7 +66,7 @@ export class AnimationHelper {
     private createGameAnimations(): void {
         for (let data of this.animationData.anims) {
             let frames;
-            let framesArray;
+            let framesArray = [];
             if (data.frames.typeOfGeneration === "generateFrameNames") {
                 frames = this.scene.anims.generateFrameNames(data.frames.key, {
                     prefix: data.frames.prefix || "",
