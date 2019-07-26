@@ -8,7 +8,7 @@ import {HudScene} from "./scenes/hudScene";
 const config: GameConfig = {
     title: "Adventurer",
     version: "1.0",
-    width: 770,
+    width: 650,
     height: 380,
     zoom: 1.5,
     type: Phaser.AUTO,

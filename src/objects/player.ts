@@ -20,7 +20,6 @@ export class Player extends Phaser.GameObjects.Sprite {
 
         this.currentScene = params.scene;
         this.initSprite();
-
         this.currentScene.add.existing(this);
     }
 
@@ -49,6 +48,8 @@ export class Player extends Phaser.GameObjects.Sprite {
         this.currentScene.physics.world.enable(this);
         this.body.maxVelocity.x = 80;
         this.body.maxVelocity.y = 300;
+        this.body.setSize(48, 36);
+
     }
 
     private addKey(key: string): Phaser.Input.Keyboard.Key {
