@@ -47,7 +47,7 @@ export class Player extends Phaser.GameObjects.Sprite {
 
         // physics
         this.currentScene.physics.world.enable(this);
-        this.body.maxVelocity.x = 50;
+        this.body.maxVelocity.x = 80;
         this.body.maxVelocity.y = 300;
     }
 
@@ -60,12 +60,11 @@ export class Player extends Phaser.GameObjects.Sprite {
             this.handleInput();
             this.handleAnimations();
         } else {
-            this.anims.play("PlayerIdle");
             //this.setFrame(0);
             if (this.y > this.currentScene.sys.canvas.height) {
+                this.currentScene.scene.start("MenuScene");
                 this.currentScene.scene.stop("GameScene");
                 this.currentScene.scene.stop("HUDScene");
-                this.currentScene.scene.start("MenuScene");
             }
         }
 
@@ -115,33 +114,23 @@ export class Player extends Phaser.GameObjects.Sprite {
         if (this.body.velocity.y !== 0) {
             // player is jumping or falling
             this.anims.stop();
-            // if (this.playerSize === "small") {
-            //     this.setFrame(4);
-            // } else {
-            //     this.setFrame(10);
-            // }
         } else if (this.body.velocity.x !== 0) {
+            //console.log(this.body.velocity.x);
             // player is moving horizontal
-
+            this.setFrame(9);
+            this.anims.play("PlayerRun");
             // check if player is making a quick direction change
-            if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
-                this.anims.play("PlayerRun");
-            }
+            // if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
+            //     this.anims.play("PlayerRun");
+            // }
 
-            if (this.body.velocity.x > 0) {
-                this.anims.play("PlayerRun");
-            }
         } else {
             // player is standing still
-            this.anims.stop();
-            if (this.playerSize === "small") {
-                this.setFrame(0);
-            } else {
-                if (this.keys.get("DOWN").isDown) {
-                    this.setFrame(13);
-                } else {
-                    this.setFrame(6);
-                }
+            this.anims.play("PlayerIdle");
+            // this.anims.stop();
+            // this.setFrame(0);
+            if (this.keys.get("DOWN").isDown) {
+                this.setFrame(4);
             }
         }
     }

@@ -5,20 +5,22 @@
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
         "key": "player",
-        "frames": [9,10,11,12,13,14,15]
+        "start": 9,
+        "end": 14
       },
       "repeat": -1,
-      "frameRate": 11
+      "frameRate": 12
     },
     {
       "key": "PlayerIdle",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
         "key": "player",
-        "frames" : [0,1,2,3]
+        "start": 0,
+        "end": 3
       },
       "repeat": -1,
-      "frameRate": 3
+      "frameRate": 5
     },
     {
       "key": "rotatingCoin",
