@@ -1,26 +1,24 @@
 {
   "anims": [
     {
-      "key": "smallMarioWalk",
+      "key": "PlayerRun",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
-        "key": "mario",
-        "start": 0,
-        "end": 3
+        "key": "player",
+        "frames": [9,10,11,12,13,14,15]
       },
       "repeat": -1,
-      "frameRate": 18
+      "frameRate": 11
     },
     {
-      "key": "bigMarioWalk",
+      "key": "PlayerIdle",
       "frames": {
         "typeOfGeneration": "generateFrameNumbers",
-        "key": "mario",
-        "start": 6,
-        "end": 9
+        "key": "player",
+        "frames" : [0,1,2,3]
       },
       "repeat": -1,
-      "frameRate": 18
+      "frameRate": 3
     },
     {
       "key": "rotatingCoin",

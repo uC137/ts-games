@@ -24,11 +24,11 @@
       },
       {
         "type": "spritesheet",
-        "key": "adventurer",
+        "key": "player",
         "url": "./src/assets/sprites/adventurer.png",
         "frameConfig": {
-          "frameWidth": 16,
-          "frameHeight": 16
+          "frameWidth": 48,
+          "frameHeight": 36
         }
       },
       {
