@@ -44,6 +44,7 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["LEFT", this.addKey("LEFT")],
             ["RIGHT", this.addKey("RIGHT")],
             ["DOWN", this.addKey("DOWN")],
+            ["KICK", this.addKey("X")],
             ["JUMP", this.addKey("SPACE")]
         ]);
         // combo for double jump
@@ -64,6 +65,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     update(): void {
         if (!this.isDying) {
             this.handleInput();
+            this.handleKick();
             this.handleAnimations();
         } else {
             //this.setFrame(0);
@@ -116,7 +118,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         }
     }
 
-    private handleJump() {
+    private handleJump(): void {
         this.anims.stop();
         // applying jump force
         this.body.setVelocityY(-200);
@@ -140,7 +142,6 @@ export class Player extends Phaser.GameObjects.Sprite {
     private handleAnimations(): void {
         if (this.body.velocity.y !== 0) {
             // player is jumping or falling
-            this.anims.stop();
             this.setFrame("16");
         } else if (this.body.velocity.x !== 0) {
             // player is moving horizontal
@@ -155,15 +156,22 @@ export class Player extends Phaser.GameObjects.Sprite {
             }
 
         } else {
-            // mario is standing still
-            this.anims.stop();
+            // standing still
             this.anims.play("PlayerIdle", true);
+            // this.setFrame(1);
             if (this.keys.get("DOWN").isDown) {
-                this.setFrame(4);
+                this.anims.play("PlayerCrunchedDown",true);
             }
         }
     }
 
+    private handleKick(): void{
+        if (this.keys.get("KICK").isDown){
+            this.anims.stop();
+            this.anims.play("PlayerKick",true);
+            console.log('xxx');
+        }
+    }
 
     private bounceUpAfterHitEnemyOnHead(): void {
         this.currentScene.add.tween({
