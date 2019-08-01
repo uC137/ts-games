@@ -48,7 +48,7 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["JUMP", this.addKey("SPACE")]
         ]);
         // combo for double jump
-        this.scene.input.keyboard.createCombo([ 32,32 ], { resetOnMatch: true });
+        this.scene.input.keyboard.createCombo([32, 32], {resetOnMatch: true});
 
         // physics
         this.currentScene.physics.world.enable(this);
@@ -119,7 +119,6 @@ export class Player extends Phaser.GameObjects.Sprite {
     }
 
     private handleJump(): void {
-        this.anims.stop();
         // applying jump force
         this.body.setVelocityY(-200);
         // this.body.velocity.y = -400;
@@ -133,7 +132,6 @@ export class Player extends Phaser.GameObjects.Sprite {
                 this.isDoubleJumping = true;
                 // applying double jump force
                 this.body.setVelocityY(-200);
-                this.anims.play("PlayerDoubleJumping", true);
             });
 
         }
@@ -142,7 +140,16 @@ export class Player extends Phaser.GameObjects.Sprite {
     private handleAnimations(): void {
         if (this.body.velocity.y !== 0) {
             // player is jumping or falling
-            this.setFrame("16");
+            if (this.body.velocity.y > 0) {
+                this.anims.play("PlayerFalling", true);
+            } else {
+                if (this.isDoubleJumping) {
+                    this.anims.play("PlayerDoubleJumping", true);
+                }else{
+                    this.anims.play("PlayerJumping",true);
+                }
+
+            }
         } else if (this.body.velocity.x !== 0) {
             // player is moving horizontal
 
@@ -160,15 +167,15 @@ export class Player extends Phaser.GameObjects.Sprite {
             this.anims.play("PlayerIdle", true);
             // this.setFrame(1);
             if (this.keys.get("DOWN").isDown) {
-                this.anims.play("PlayerCrunchedDown",true);
+                this.anims.play("PlayerCrunchedDown", true);
             }
         }
     }
 
-    private handleKick(): void{
-        if (this.keys.get("KICK").isDown){
+    private handleKick(): void {
+        if (this.keys.get("KICK").isDown) {
             this.anims.stop();
-            this.anims.play("PlayerKick",true);
+            this.anims.play("PlayerKick", true);
             console.log('xxx');
         }
     }
