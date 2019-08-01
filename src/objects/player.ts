@@ -47,11 +47,12 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["LEFT", this.addKey("LEFT")],
             ["RIGHT", this.addKey("RIGHT")],
             ["DOWN", this.addKey("DOWN")],
-            ["HIT", this.addKey("X")],
+            ["HIT", this.addKey("x")],
             ["JUMP", this.addKey("SPACE")]
         ]);
         // combo for double jump
         this.scene.input.keyboard.createCombo([32, 32], {resetOnMatch: true});
+        this.scene.input.keyboard.createCombo([88, 88], {resetOnMatch: true});
 
         // physics
         this.currentScene.physics.world.enable(this);
@@ -154,17 +155,15 @@ export class Player extends Phaser.GameObjects.Sprite {
             }
         } else if (this.body.velocity.x !== 0) {
             // player is moving horizontal
-
-            // check if mario is making a quick direction change
+            // check if player is making a quick direction change
             if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
                 this.setFrame(9);
             }
             if (this.body.velocity.x > 0 || this.body.velocity.x < 0) {
                 if (this.keys.get("HIT").isDown) {
                     this.handleHit();
-                }else {
-
-                this.anims.play("PlayerRun", true);
+                } else {
+                    this.anims.play("PlayerRun", true);
                 }
             }
 
@@ -186,13 +185,17 @@ export class Player extends Phaser.GameObjects.Sprite {
     }
 
     private handleHit(): void {
+        this.scene.input.keyboard.on('keycombomatch', () => this.hit = 2);
         this.armed = true;
+
         switch (this.keys.get("HIT").isDown) {
             case this.hit === 0:
+                this.hit = -1;
                 this.anims.play("PlayerHit", true);
                 break;
             case this.hit === 2:
-                this.anims.play("PlayerHit", true);
+                this.hit = -1;
+                this.anims.play("PlayerHitCombo", true);
                 break;
         }
 
