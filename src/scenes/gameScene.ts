@@ -80,18 +80,6 @@ export class GameScene extends Phaser.Scene {
                 this.player = new Player({scene: this, x: this.registry.get("spawn").x, y: this.registry.get("spawn").y, key: "player"});
             }
 
-            if (object.type === "goomba") {
-                // this.enemies.add(
-                //     new Goomba({
-                //         scene: this,
-                //         x: object.x,
-                //         y: object.y,
-                //         key: "goomba"
-                //     })
-                // );
-            }
-
-
             if (object.type === "collectible") {
                 // this.collectibles.add(
                 //     // new Collectible({scene: this,x: object.x,y: object.y,key: object.properties.kindOfCollectible,points: 100})

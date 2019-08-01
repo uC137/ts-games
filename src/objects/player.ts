@@ -51,8 +51,8 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["JUMP", this.addKey("SPACE")]
         ]);
         // combo for double jump
-        this.scene.input.keyboard.createCombo([32, 32], {resetOnMatch: true});
-        this.scene.input.keyboard.createCombo([88, 88], {resetOnMatch: true});
+        this.currentScene.input.keyboard.createCombo([32, 32], {resetOnMatch: true});
+        this.currentScene.input.keyboard.createCombo([88, 88], {resetOnMatch: true});
 
         // physics
         this.currentScene.physics.world.enable(this);
@@ -130,7 +130,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         // the hero can now double jump
         // this.isDoubleJumping = false;
         if (!this.isDoubleJumping) {
-            this.scene.input.keyboard.once('keycombomatch', (e) => {
+            this.currentScene.input.keyboard.once('keycombomatch', (e) => {
                 // the hero double jumping already?
                 this.isDoubleJumping = true;
                 // applying double jump force
@@ -185,7 +185,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     }
 
     private handleHit(): void {
-        this.scene.input.keyboard.on('keycombomatch', () => this.hit = 2);
+        this.currentScene.input.keyboard.on('keycombomatch', () => this.hit = 2);
         this.armed = true;
 
         switch (this.keys.get("HIT").isDown) {
