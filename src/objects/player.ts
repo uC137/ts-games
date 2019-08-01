@@ -4,9 +4,11 @@ export class Player extends Phaser.GameObjects.Sprite {
     private playerSize: string;
     private acceleration: number;
     private isJumping: boolean;
+    private isDoubleJumping: boolean;
     private isDying: boolean;
     private isVulnerable: boolean;
     private vulnerableCounter: number;
+    private jumpForce: number;
 
     // input
     private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -28,12 +30,13 @@ export class Player extends Phaser.GameObjects.Sprite {
         this.playerSize = this.currentScene.registry.get("liveBar");
         this.acceleration = 500;
         this.isJumping = false;
+        this.isDoubleJumping = false;
         this.isDying = false;
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
 
         // sprite
-        this.setOrigin(0, 0);
+        this.setOrigin(0.5, 0.5);
         this.setFlipX(false);
 
         // input
@@ -43,6 +46,8 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["DOWN", this.addKey("DOWN")],
             ["JUMP", this.addKey("SPACE")]
         ]);
+        // combo for double jump
+        this.scene.input.keyboard.createCombo([ 32,32 ], { resetOnMatch: true });
 
         // physics
         this.currentScene.physics.world.enable(this);
@@ -89,6 +94,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         // if neither of that, set the player to be jumping
         if (this.body.onFloor() || this.body.touching.down || this.body.blocked.down) {
             this.isJumping = false;
+            this.isDoubleJumping = false;
             this.body.setVelocityY(0);
         }
 
@@ -106,8 +112,28 @@ export class Player extends Phaser.GameObjects.Sprite {
 
         // handle jumping
         if (this.keys.get("JUMP").isDown && !this.isJumping) {
-            this.body.setVelocityY(-180);
-            this.isJumping = true;
+            this.handleJump();
+        }
+    }
+
+    private handleJump() {
+        this.anims.stop();
+        // applying jump force
+        this.body.setVelocityY(-200);
+        // this.body.velocity.y = -400;
+        // hero can't jump anymore
+        this.isJumping = true;
+        // the hero can now double jump
+        // this.isDoubleJumping = false;
+        if (!this.isDoubleJumping) {
+            this.scene.input.keyboard.once('keycombomatch', (e) => {
+                // the hero double jumping already?
+                this.isDoubleJumping = true;
+                // applying double jump force
+                this.body.setVelocityY(-200);
+                this.anims.play("PlayerDoubleJumping", true);
+            });
+
         }
     }
 
@@ -115,7 +141,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         if (this.body.velocity.y !== 0) {
             // player is jumping or falling
             this.anims.stop();
-            this.anims.play("PlayerJumping", true);
+            this.setFrame("16");
         } else if (this.body.velocity.x !== 0) {
             // player is moving horizontal
 

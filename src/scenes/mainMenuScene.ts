@@ -37,7 +37,7 @@ export class MainMenuScene extends Phaser.Scene {
         this.registry.set("score", 0);
         this.registry.set("lives", 2);
         this.registry.set("liveBar", 100);
-        this.registry.set("spawn", { x: 80, y: 200, dir: "down" });
+        this.registry.set("spawn", { x: 160, y: 100, dir: "down" });
     }
 
 }
