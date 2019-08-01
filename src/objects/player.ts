@@ -8,7 +8,8 @@ export class Player extends Phaser.GameObjects.Sprite {
     private isDying: boolean;
     private isVulnerable: boolean;
     private vulnerableCounter: number;
-    private jumpForce: number;
+    private armed: boolean;
+    private hit: number;
 
     // input
     private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -34,6 +35,8 @@ export class Player extends Phaser.GameObjects.Sprite {
         this.isDying = false;
         this.isVulnerable = true;
         this.vulnerableCounter = 100;
+        this.armed = false;
+        this.hit = 0;
 
         // sprite
         this.setOrigin(0.5, 0.5);
@@ -44,7 +47,7 @@ export class Player extends Phaser.GameObjects.Sprite {
             ["LEFT", this.addKey("LEFT")],
             ["RIGHT", this.addKey("RIGHT")],
             ["DOWN", this.addKey("DOWN")],
-            ["KICK", this.addKey("X")],
+            ["HIT", this.addKey("X")],
             ["JUMP", this.addKey("SPACE")]
         ]);
         // combo for double jump
@@ -65,7 +68,6 @@ export class Player extends Phaser.GameObjects.Sprite {
     update(): void {
         if (!this.isDying) {
             this.handleInput();
-            this.handleKick();
             this.handleAnimations();
         } else {
             //this.setFrame(0);
@@ -145,8 +147,8 @@ export class Player extends Phaser.GameObjects.Sprite {
             } else {
                 if (this.isDoubleJumping) {
                     this.anims.play("PlayerDoubleJumping", true);
-                }else{
-                    this.anims.play("PlayerJumping",true);
+                } else {
+                    this.anims.play("PlayerJumping", true);
                 }
 
             }
@@ -156,28 +158,45 @@ export class Player extends Phaser.GameObjects.Sprite {
             // check if mario is making a quick direction change
             if ((this.body.velocity.x < 0 && this.body.acceleration.x > 0) || (this.body.velocity.x > 0 && this.body.acceleration.x < 0)) {
                 this.setFrame(9);
-                //this.anims.play("PlayerRun");
             }
             if (this.body.velocity.x > 0 || this.body.velocity.x < 0) {
+                if (this.keys.get("HIT").isDown) {
+                    this.handleHit();
+                }else {
+
                 this.anims.play("PlayerRun", true);
+                }
             }
 
         } else {
-            if (this.keys.get("DOWN").isDown) { // CrunchedDown
+            if (this.keys.get("HIT").isDown) {
+                this.handleHit();
+            } else if (this.keys.get("DOWN").isDown) { // CrunchedDown
                 this.anims.play("PlayerCrunchedDown", true);
-            }else {
+            } else {
                 // standing still
-                this.anims.play("PlayerIdle", true);
+                if (this.armed) {
+                    this.anims.play("PlayerIdleArmed", true);
+                } else {
+                    this.anims.play("PlayerIdle", true);
+                }
             }
+
         }
     }
 
-    private handleKick(): void {
-        if (this.keys.get("KICK").isDown) {
-            this.anims.stop();
-            this.anims.play("PlayerKick", true);
-            console.log('xxx');
+    private handleHit(): void {
+        this.armed = true;
+        switch (this.keys.get("HIT").isDown) {
+            case this.hit === 0:
+                this.anims.play("PlayerHit", true);
+                break;
+            case this.hit === 2:
+                this.anims.play("PlayerHit", true);
+                break;
         }
+
+        this.hit = 0;
     }
 
     private bounceUpAfterHitEnemyOnHead(): void {
