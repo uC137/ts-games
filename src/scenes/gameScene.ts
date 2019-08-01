@@ -36,6 +36,7 @@ export class GameScene extends Phaser.Scene {
         // *****************************************************************
         // COLLIDERS
         // *****************************************************************
+        this.player.body.checkCollision.up = false;
         this.physics.add.collider(this.player, this.foregroundLayer);
 
 
