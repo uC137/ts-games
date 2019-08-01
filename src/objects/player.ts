@@ -163,11 +163,11 @@ export class Player extends Phaser.GameObjects.Sprite {
             }
 
         } else {
-            // standing still
-            this.anims.play("PlayerIdle", true);
-            // this.setFrame(1);
-            if (this.keys.get("DOWN").isDown) {
+            if (this.keys.get("DOWN").isDown) { // CrunchedDown
                 this.anims.play("PlayerCrunchedDown", true);
+            }else {
+                // standing still
+                this.anims.play("PlayerIdle", true);
             }
         }
     }
