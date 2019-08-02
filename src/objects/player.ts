@@ -10,6 +10,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     private vulnerableCounter: number;
     private armed: boolean;
     private hit: number;
+    private tick: number = 0;
 
     // input
     private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -59,6 +60,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         this.body.maxVelocity.x = 80;
         this.body.maxVelocity.y = 300;
         this.body.setSize(16, 32);
+        this.body.checkCollision.up = false;
 
     }
 
@@ -66,7 +68,15 @@ export class Player extends Phaser.GameObjects.Sprite {
         return this.currentScene.input.keyboard.addKey(key);
     }
 
-    update(): void {
+    update(time): void {
+        // hide sword based on time
+        if (this.tick === 0) {
+            this.tick = time;
+        }else if (time - this.tick > 7000){
+            this.tick = time;
+            this.armed = false;
+        }
+
         if (!this.isDying) {
             this.handleInput();
             this.handleAnimations();

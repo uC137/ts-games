@@ -36,7 +36,6 @@ export class GameScene extends Phaser.Scene {
         // *****************************************************************
         // COLLIDERS
         // *****************************************************************
-        this.player.body.checkCollision.up = false;
         this.physics.add.collider(this.player, this.foregroundLayer);
 
 
@@ -44,14 +43,13 @@ export class GameScene extends Phaser.Scene {
         // CAMERA
         // *****************************************************************
         this.cameras.main.startFollow(this.player);
-        this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
-
+        this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels -5);
 
     }
 
 
     update(time: number): void {
-        this.player.update();
+        this.player.update(time);
     }
 
 
