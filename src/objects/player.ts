@@ -42,6 +42,7 @@ export class Player extends Phaser.GameObjects.Sprite {
         // sprite
         this.setOrigin(0.5, 0.5);
         this.setFlipX(false);
+        this.setScale(1.2,1.2);
 
         // input
         this.keys = new Map([
