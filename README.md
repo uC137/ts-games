@@ -1,6 +1,7 @@
 ## Developing games on Typescript and Phaser
 
 [Demo](https://uc137.github.io/ts-games/)
+#### to see a demo use desktop browser
 
 ## Screenshot
 <img src="ScreenShot.png" width="300"/>
